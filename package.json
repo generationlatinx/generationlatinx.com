@@ -10,7 +10,7 @@
     "build": "poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
-    "test": "tyu",
+    "test": "tyu && ava",
     "deploy": "cp -a dist/. public/ ",
     "configure": "cp src/services/config.js.example src/services/config.js",
     "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
@@ -28,17 +28,31 @@
     "object-assign": "^4.1.1",
     "offline-plugin": "4.9.1",
     "poi": "9.6.13",
+    "poi-preset-bundle-report": "2.0.2",
+    "poi-preset-offline": "9.0.3",
     "promise-polyfill": "7.1.2",
+    "serve": "^10.1.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "ava": "1.0.0-rc.2",
+    "browser-env": "^3.2.5",
     "node-sass": "^4.10.0",
-    "poi-preset-bundle-report": "2.0.2",
-    "poi-preset-offline": "9.0.3",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^1.1.0",
     "sass-loader": "^7.1.0",
-    "serve": "6.5.8",
-    "tyu": "1.0.6"
+    "tyu": "1.0.6",
+    "vue-devtools": "^5.0.0-beta.1",
+    "vue-test-utils": "^1.0.0-beta.11"
+  },
+  "ava": {
+    "require": [
+      "./test/helpers/setup.js",
+      "@babel/polyfill"
+    ]
   }
 }

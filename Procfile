@@ -1,1 +1,1 @@
-web: npm run postinstall && npm run serve
+web: yarn run postinstall && yarn run serve

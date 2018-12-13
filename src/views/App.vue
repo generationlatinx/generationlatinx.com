@@ -81,14 +81,11 @@
 
 <style module>
   .container {
-    /* position: fixed; */
     left: 0;
     top: 0;
     height: 100vh;
     width: 100vw;
     background-color: var(--primary-color);
-    /* background: url('@/images/glx_bg.jpg') bottom / contain  ; */
-
   }
 </style>
 
