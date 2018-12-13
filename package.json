@@ -11,7 +11,7 @@
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
     "test": "ava",
-    "test:ci": "ava --tap",
+    "test:ci": "npx nyc ava src",
     "deploy": "cp -a dist/. public/ ",
     "configure": "cp src/services/config.js.example src/services/config.js",
     "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
@@ -42,6 +42,7 @@
     "ava": "1.0.0-rc.2",
     "browser-env": "^3.2.5",
     "node-sass": "^4.10.0",
+    "nyc": "^13.1.0",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.1.0",
@@ -55,5 +56,16 @@
       "./test/helpers/setup.js",
       "@babel/polyfill"
     ]
+  },
+  "env": {
+    "test": {
+      "plugins": [
+        [ "istanbul", {
+            "exclude": [
+              "**/*.test.js"
+            ]
+          }]
+      ]
+    }
   }
 }

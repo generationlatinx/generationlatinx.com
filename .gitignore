@@ -9,4 +9,9 @@ dist
 # api key drop
 /src/services/config.js
 
+# static folder for heroku builds
 public
+
+# coverage reports
+.nyc_output
+coverage
