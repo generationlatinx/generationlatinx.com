@@ -5,3 +5,6 @@ node_modules
 # poi dist
 dist
 /.gtm/
+
+# api key drop
+/src/services/config.js

@@ -31,7 +31,7 @@
 import CastRoster from '@/views/components/cast-roster'
 import Mailchimp from '@/views/components/mailchimp'
 import Airtable from 'airtable'
-import { airtableConfig } from './config'
+import { airtableConfig } from '@/services/config.js'
 
 export default {
   name: 'shows-page',
@@ -43,8 +43,8 @@ export default {
     this.airtable.apiKey = this.findAirtableApiKey();
     if (this.airtable.apiKey) {
       let apiKey = this.airtable.apiKey
-      this.biosApi = new Airtable({ apiKey }).base('appL2lbxsCHqyIHbr')
-      this.showsApi = new Airtable({ apiKey }).base('app0Q2zitCV2NFsRQ')
+      this.biosApi = new Airtable({ apiKey }).base(airtableConfig.workspaceBios)
+      this.showsApi = new Airtable({ apiKey }).base(airtableConfig.workspaceGigs)
       // bios
       if (!this.biosPerformerId) {
         this.getBiosTables();
@@ -59,7 +59,7 @@ export default {
       error: null,
       airtable: {
         apiKey: null,
-        readOnlyApiKey: null || airtableConfig.readOnlyApiKey
+        readOnlyApiKey: null || airtableConfig.readonlyKey
       },
       bios: [],
       biosPerformerId: '',
