@@ -85,7 +85,7 @@
     "all": true,
     "temp-dir": "./alternative-tmp",
     "report-dir": "./alternative"
-  }
+  },
   "env": {
     "test": {
       "plugins": [
