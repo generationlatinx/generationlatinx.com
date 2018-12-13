@@ -28,6 +28,8 @@
     "object-assign": "^4.1.1",
     "offline-plugin": "4.9.1",
     "poi": "9.6.13",
+    "poi-preset-bundle-report": "2.0.2",
+    "poi-preset-offline": "9.0.3",
     "promise-polyfill": "7.1.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
@@ -35,8 +37,6 @@
   },
   "devDependencies": {
     "node-sass": "^4.10.0",
-    "poi-preset-bundle-report": "2.0.2",
-    "poi-preset-offline": "9.0.3",
     "sass-loader": "^7.1.0",
     "serve": "6.5.8",
     "tyu": "1.0.6"
