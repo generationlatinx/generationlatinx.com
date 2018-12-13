@@ -60,31 +60,20 @@
    "nyc": {
     "check-coverage": true,
     "per-file": true,
-    "lines": 99,
+    "lines": 19,
     "statements": 19,
     "functions": 19,
     "branches": 19,
     "include": [
       "src/**/*.js"
     ],
-    "exclude": [
-      "src/**/*.spec.js"
-    ],
-    "ignore-class-method": "methodToIgnore",
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ],
+    "ignore-class-method": "VueRouter",
     "require": [
       "./test/helpers/setup.js"
     ],
     "extension": [
       ".vue"
-    ],
-    "cache": true,
-    "all": true,
-    "temp-dir": "./alternative-tmp",
-    "report-dir": "./alternative"
+    ]
   },
   "env": {
     "test": {
