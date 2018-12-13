@@ -60,14 +60,14 @@
    "nyc": {
     "check-coverage": true,
     "per-file": true,
-    "lines": 19,
-    "statements": 19,
-    "functions": 19,
-    "branches": 19,
+    "lines": 9,
+    "statements": 9,
+    "functions": 9,
+    "branches": 9,
     "include": [
       "src/**/*.js"
     ],
-    "ignore-class-method": "VueRouter",
+    "ignore-class-method": ["VueRouter", ”RouterLink”],
     "require": [
       "./test/helpers/setup.js"
     ],
