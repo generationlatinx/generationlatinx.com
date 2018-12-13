@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "generation-latinx-n",
+  "productName": "generation-latinx-n",
+  "description": "My exceptional Vue project",
+  "version": "0.0.2",
+  "license": "MIT",
+  "scripts": {
+    "dev": "poi",
+    "build": "poi build",
+    "report": "poi build --bundle-report",
+    "serve": "serve dist --single",
+    "test": "tyu"
+  },
+  "author": {
+    "name": "Rene M. Paccha",
+    "email": "1162669+renemarcelo@users.noreply.github.com"
+  },
+  "dependencies": {
+    "airtable": "^0.5.7",
+    "axios": "^0.18.0",
+    "gsap": "^2.0.2",
+    "materialize-css": "^1.0.0-rc.2",
+    "normalize.css": "^7.0.0",
+    "object-assign": "^4.1.1",
+    "offline-plugin": "4.9.1",
+    "promise-polyfill": "7.1.2",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.10.0",
+    "poi": "9.6.13",
+    "poi-preset-bundle-report": "2.0.2",
+    "poi-preset-offline": "9.0.3",
+    "sass-loader": "^7.1.0",
+    "serve": "6.5.8",
+    "tyu": "1.0.6"
+  }
+}
