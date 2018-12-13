@@ -82,7 +82,7 @@ jobs:
       - add_ssh_keys:                                                                                          #
           ## Added pub key to heroku && added priv key under Circle SSH PERMISSIONS (no passph)                #
           fingerprints:                                                                                        #
-            - "e1:1d:03:1f:6a:d5:90:6e:19:f3:fb:e8:04:64:81:09"                                                #
+            - "71:f5:71:db:2f:95:9a:da:ff:64:e6:cd:63:d9:3e:ba"                                                #
 
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
 
