@@ -1,5 +1,5 @@
 CACHE MANIFEST
-#ver:12/13/2018, 12:50:06 AM
+#ver:12/13/2018, 12:58:15 AM
 #plugin:4.9.1
 
 CACHE:
@@ -17,8 +17,8 @@ CACHE:
 /vendor.eb2e0295.css
 /manifest.json
 /icons/android-chrome-192x192.png
-/icons/android-chrome-512x512.png
 /favicon.ico
+/icons/android-chrome-512x512.png
 /
 
 NETWORK:
