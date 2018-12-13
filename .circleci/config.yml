@@ -67,7 +67,17 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test:ci
+      - run:
+          command: |
+            yarn add ava tap-xunit --dev # or you could use npm
+            mkdir -p ~/reports
+            yarn test:ci | tap-xunit > ~/reports/ava.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
+
 
   # test-dev:
   #   <<: *defaults
