@@ -45,6 +45,8 @@ jobs:
     steps:
       - checkout
 
+      - run: cp src/services/config.js.example src/services/config.js
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -54,7 +56,7 @@ jobs:
 
       - run: yarn install
 
-      - run: cp src/services/config.js.example src/services/config.js
+
 
       # Added by ForePropo
       - run: yarn build
