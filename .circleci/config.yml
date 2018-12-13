@@ -67,7 +67,18 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test:ci
+      - run:
+          command: |
+            npm install --save-dev --save-exact ava@next
+            npm install tap-xunit --save-dev # or you could use npm
+            mkdir -p ~/reports
+            yarn test:ci | npx tap-xunit > ~/reports/ava.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
+
 
   # test-dev:
   #   <<: *defaults
@@ -98,7 +109,17 @@ jobs:
 
       - run: yarn build
 
-      - run: yarn test
-      - run: yarn test:ci
+      # run tests!
+      - run:
+          command: |
+            npm install --save-dev --save-exact ava@next
+            npm install tap-xunit --save-dev # or you could use npm
+            mkdir -p ~/reports
+            yarn test:ci | npx tap-xunit > ~/reports/ava.xml
+          when: always
+      - store_test_results:
+          path: ~/reports
+      - store_artifacts:
+          path: ~/reports
 
       - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
