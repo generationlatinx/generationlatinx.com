@@ -62,7 +62,7 @@
       "plugins": [
         [ "istanbul", {
             "exclude": [
-              "**/*.test.js"
+              "src/**/*.test.js"
             ]
           }]
       ]
