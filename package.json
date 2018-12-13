@@ -11,7 +11,7 @@
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
     "test": "ava",
-    "test:ci": "nyc ava --tap src",
+    "test:ci": "npx nyc ava src",
     "deploy": "cp -a dist/. public/ ",
     "configure": "cp src/services/config.js.example src/services/config.js",
     "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
