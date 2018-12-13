@@ -3,15 +3,6 @@ workflows:
   dev_stage_pre-prod:
       jobs:
       - flow
-  #     - test_dev:
-  #       requires:
-  #         - flow
-  #       filters:  # using regex filters requires the entire branch to match
-  #         branches:
-  #           only:  # only branches matching the below regex filters will run
-  #             - /dev-.*/
-  #             - /fix-.*/
-  #             - /chore-.*/
 
       - test_stage:
           requires:
@@ -51,14 +42,10 @@ jobs:
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
       - run: yarn install
 
-
-
-      # Added by ForePropo
       - run: yarn build
 
       - save_cache:
