@@ -10,7 +10,10 @@
     "build": "poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
-    "test": "tyu"
+    "test": "tyu",
+    "deploy": "cp -a dist/. public/ ",
+    "configure": "cp src/services/config.js.example src/services/config.js",
+    "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
@@ -24,6 +27,7 @@
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "offline-plugin": "4.9.1",
+    "poi": "9.6.13",
     "promise-polyfill": "7.1.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1",
@@ -31,7 +35,6 @@
   },
   "devDependencies": {
     "node-sass": "^4.10.0",
-    "poi": "9.6.13",
     "poi-preset-bundle-report": "2.0.2",
     "poi-preset-offline": "9.0.3",
     "sass-loader": "^7.1.0",
