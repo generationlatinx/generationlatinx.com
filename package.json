@@ -12,7 +12,8 @@
     "serve": "serve dist --single",
     "test": "tyu",
     "deploy": "cp -a dist/. public/ ",
-    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+    "configure": "cp src/services/config.js.example src/services/config.js",
+    "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
