@@ -67,7 +67,7 @@
     "include": [
       "src/**/*.js"
     ],
-    "ignore-class-method": ["VueRouter", ”RouterLink”],
+    "ignore-class-method": ["VueRouter", "RouterLink"],
     "require": [
       "./test/helpers/setup.js"
     ],
