@@ -1,0 +1,101 @@
+workflows:
+  version: 2
+  dev_stage_pre-prod:
+      jobs:
+      - flow
+  #     - test_dev:
+  #       requires:
+  #         - flow
+  #       filters:  # using regex filters requires the entire branch to match
+  #         branches:
+  #           only:  # only branches matching the below regex filters will run
+  #             - /dev-.*/
+  #             - /fix-.*/
+  #             - /chore-.*/
+
+      - test_stage:
+          requires:
+            - flow
+          filters:
+            branches:
+              only:
+                - /dev-.*/
+                - /fix-.*/
+                - /chore-.*/
+
+      - test_pre-prod:
+          requires:
+            - flow
+          filters:
+            branches:
+              only:
+                - master
+
+defaults: &defaults
+  working_directory: ~/repo
+  docker:
+    - image: circleci/node:10-stretch
+
+version: 2
+jobs:
+
+  flow:
+    <<: *defaults
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      - run: yarn install
+
+      # Added by ForePropo
+      - run: yarn build
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      # - run: yarn test
+
+
+  # test-dev:
+  #   <<: *defaults
+  #   steps:
+  #     - checkout
+  #     - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
+  test_stage:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - run:                                                                                                   #
+          name: Run setup script                                                                               #
+          command: bash .circleci/setup-heroku.sh                                                              #
+      - add_ssh_keys:                                                                                          #
+          ## Added pub key to heroku && added priv key under Circle SSH PERMISSIONS (no passph)                #
+          fingerprints:                                                                                        #
+            - "e1:1d:03:1f:6a:d5:90:6e:19:f3:fb:e8:04:64:81:09"                                                #
+
+      - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
+
+  test_pre-prod:
+    <<: *defaults
+    steps:
+      - checkout
+
+      - run: yarn install
+
+      - run: yarn build
+
+      - run: yarn test
+      - run: yarn test:ci
+
+      - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
