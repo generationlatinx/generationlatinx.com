@@ -56,5 +56,16 @@
       "./test/helpers/setup.js",
       "@babel/polyfill"
     ]
+  },
+  "env": {
+    "test": {
+      "plugins": [
+        [ "istanbul", {
+            "exclude": [
+              "**/*.test.js"
+            ]
+          }]
+      ]
+    }
   }
 }

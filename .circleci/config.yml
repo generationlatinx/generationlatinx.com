@@ -102,7 +102,7 @@ jobs:
             npm install --save-dev --save-exact ava@next
             npm install tap-xunit --save-dev # or you could use npm
             mkdir -p ~/reports
-            yarn test:ci | npx tap-xunit > ~/reports/ava.xml
+            yarn test:ci | npx tap-xunit > ~/reports/coverage.xml
           when: always
       - store_test_results:
           path: ~/reports
