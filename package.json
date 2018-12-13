@@ -76,7 +76,7 @@
       "text-summary"
     ],
     "require": [
-      "./test/helpers/some-helper.js"
+      "./test/helpers/setup.js"
     ],
     "extension": [
       ".jsx"
