@@ -109,4 +109,6 @@ jobs:
       - store_artifacts:
           path: ~/reports
 
-      - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
+      - run: npm install --save-dev --save-exact firebase-tools@next
+
+      - run: npx firebase deploy --token $FIREBASE_TOKEN

@@ -11,7 +11,7 @@
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
     "test": "ava",
-    "test:ci": "ava --tap",    
+    "test:ci": "ava --tap",
     "deploy": "cp -a dist/. public/ ",
     "configure": "cp src/services/config.js.example src/services/config.js",
     "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
@@ -41,7 +41,6 @@
     "@babel/polyfill": "^7.0.0",
     "ava": "1.0.0-rc.2",
     "browser-env": "^3.2.5",
-    "firebase": "^5.7.0",
     "node-sass": "^4.10.0",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
