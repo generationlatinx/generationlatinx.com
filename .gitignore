@@ -8,4 +8,5 @@ dist
 
 # api key drop
 /src/services/config.js
-public/
+
+public
