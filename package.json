@@ -11,8 +11,8 @@
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
     "test": "tyu",
-    "deploy": "cp -a dist/. public/ && cp src/services/config.js.example src/services/config.js",
-    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+    "deploy": "cp -a dist/. public/ ",
+    "postinstall": "cp src/services/config.js.example src/services/config.js && npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
