@@ -11,7 +11,7 @@
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
     "test": "tyu",
-    "deploy": "cp -a dist/. public/",
+    "deploy": "cp -a dist/. public/ && cp src/services/config.js.example src/services/config.js",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
