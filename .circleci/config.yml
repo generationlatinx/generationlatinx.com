@@ -54,6 +54,8 @@ jobs:
 
       - run: yarn install
 
+      - run: cp src/services/config.js.example src/services/config.js
+
       # Added by ForePropo
       - run: yarn build
 
