@@ -13,7 +13,8 @@
     "test": "ava",
     "test:ci": "npx nyc ava src",
     "deploy": "cp -a dist/. public/ ",
-    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+    "configure": "cp src/services/config.js.example src/services/config.js",
+    "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
@@ -39,9 +40,7 @@
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",
     "ava": "1.0.0-rc.2",
-    "babel-plugin-istanbul": "^5.1.0",
     "browser-env": "^3.2.5",
-    "istanbul-instrumenter-loader": "^3.0.1",
     "node-sass": "^4.10.0",
     "nyc": "^13.1.0",
     "require-extension-hooks": "^0.3.3",
@@ -58,28 +57,15 @@
       "@babel/polyfill"
     ]
   },
-  "nyc": {
-    "check-coverage": true,
-    "per-file": true,
-    "lines": 0,
-    "statements": 0,
-    "functions": 0,
-    "branches": 9,
-    "ignore-class-method": [
-      "VueRouter",
-      "RouterLink"
-    ],
-    "include": [
-      "src/**/*.{js,vue}"
-    ],
-    "exclude": [
-      "src/*.js",
-      "src/index.js",
-      "src/**/*.test.js"
-    ],
-    "require": [
-      "./test/helpers/setup.js"
-    ],
-    "cache": true
+  "env": {
+    "test": {
+      "plugins": [
+        [ "istanbul", {
+            "exclude": [
+              "**/*.test.js"
+            ]
+          }]
+      ]
+    }
   }
 }
