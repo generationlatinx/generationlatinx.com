@@ -85,9 +85,17 @@ jobs:
           fingerprints:                                                                                        #
             - "71:f5:71:db:2f:95:9a:da:ff:64:e6:cd:63:d9:3e:ba"                                                #
 
-      # - run:
-      #     name: Set Heroku config vars
-      #     command: heroku config:set POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS --app $HEROKU_APP_STAGING
+      - run:
+          name: Set Heroku config vars
+          command: |
+            cat >> ~/.env << EOF
+            POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
+            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
+            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
+            EOF
+      - run:
+          name: Confirm .env read
+          command: heroku run echo $POI_APP_WORKSPACE_BIOS --app $HEROKU_APP_STAGING && ls .env
 
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
 

@@ -20,13 +20,5 @@ EOF
 # heroku buildpacks:set heroku/nodejs
 # heroku buildpacks:add heroku/ruby
 
-# Might have to set the manually via heroku cli
-cat >> ~/.env << EOF
-POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
-POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
-POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
-EOF
-
-
 # Add heroku.com to the list of known hosts
 ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts
