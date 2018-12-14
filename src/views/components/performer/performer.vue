@@ -5,7 +5,7 @@
   <div v-if="bio">
     <!-- wrapping click/touch-function -->
     <div  class="card hoverable">
-      <div v-if="bio.fields['Headshot Image'][0]['thumbnails'].large || '' " class="card-image">
+      <div v-if="bio.fields['Headshot Image']" class="card-image">
         <img  :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
         alt=""
         width="100%" />

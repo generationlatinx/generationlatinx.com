@@ -3,6 +3,7 @@
 // Setup browser environment
 require('browser-env')();
 const hooks = require('require-extension-hooks');
+
 const Vue = require('vue');
 
 // Setup Vue.js to remove production tip

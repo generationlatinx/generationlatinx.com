@@ -60,12 +60,12 @@
     ]
   },
   "nyc": {
-    "check-coverage": true,
-    "per-file": true,
-    "lines": 9,
-    "statements": 9,
-    "functions": 9,
-    "branches": 9,
+    "check-coverage": false,
+    "per-file": false,
+    "lines": 0,
+    "statements": 0,
+    "functions": 0,
+    "branches": 0,
     "ignore-class-method": [
       "VueRouter",
       "RouterLink"
@@ -74,12 +74,13 @@
       "src/**/*.{js,vue}"
     ],
     "exclude": [
-      "src/*.js"
+      "src/*.js",
+      "src/index.js",
+      "src/**/*.test.js"
     ],
     "require": [
       "./test/helpers/setup.js"
     ],
-    "cache": true,
-    "all": true
+    "cache": true
   }
 }
