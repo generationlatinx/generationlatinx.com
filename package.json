@@ -64,8 +64,8 @@
     "statements": 9,
     "functions": 9,
     "branches": 9,
-    "include": [
-      "src/**/*.js"
+    "exclude": [
+      "src/core/**/*.js"
     ],
     "ignore-class-method": ["VueRouter", "RouterLink"],
     "require": [
