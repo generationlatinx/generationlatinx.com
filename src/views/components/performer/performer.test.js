@@ -1,38 +1,15 @@
-import test from 'ava';
-import Vue from 'vue';
-import Performer from './performer.vue';
-import Router from 'vue-router';
+// You need to install vue-test-utils
+import { mount } from '@vue/test-utils'
+import Performer from './performer.vue'
 
+xdescribe('Performer', () => {
+  xtest('is a Vue instance', () => {
+    const wrapper = mount(Performer)
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
 
-const Ctor = new Vue(Performer);
-
-test('renders', t => {
-	const vm = new Vue(Performer).$mount();
-	const tree = {
-		$el: vm.$el.outerHTML
-	};
-	t.snapshot(tree);
-});
-
-// use This from https://vuejs.org/v2/guide/unit-testing.html#Writing-Testable-Components
-// import Vue from 'vue'
-// import MyComponent from './MyComponent.vue'
-//
-// // helper function that mounts and returns the rendered text
-// function getRenderedText (Component, propsData) {
-//   const Constructor = Vue.extend(Component)
-//   const vm = new Constructor({ propsData: propsData }).$mount()
-//   return vm.$el.textContent
-// }
-//
-// describe('MyComponent', () => {
-//   it('renders correctly with different props', () => {
-//     expect(getRenderedText(MyComponent, {
-//       msg: 'Hello'
-//     })).toBe('Hello')
-//
-//     expect(getRenderedText(MyComponent, {
-//       msg: 'Bye'
-//     })).toBe('Bye')
-//   })
-// })
+  xtest('has correct content', () => {
+    const wrapper = mount(Performer)
+    expect(wrapper.props()).toBe('Home Videos Meet the Directors Contact Next show on Tues, 12/10 8pm')
+  })
+})

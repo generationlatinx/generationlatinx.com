@@ -45,33 +45,12 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
-
       - run: yarn build
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run:
-          command: |
-            npm install --save-dev --save-exact ava@next
-            npm install tap-xunit --save-dev # or you could use npm
-            mkdir -p ~/reports
-            yarn test --tap| npx tap-xunit > ~/reports/ava.xml
-          when: always
-      - store_test_results:
-          path: ~/reports
-      - store_artifacts:
-          path: ~/reports
-
-
-  # test-dev:
-  #   <<: *defaults
-  #   steps:
-  #     - checkout
-  #     - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
   test_stage:
     <<: *defaults
     steps:
@@ -85,47 +64,30 @@ jobs:
           fingerprints:                                                                                        #
             - "71:f5:71:db:2f:95:9a:da:ff:64:e6:cd:63:d9:3e:ba"                                                #
 
-      - run:
-          name: Set Heroku config vars
-          command: |
-            cat >> ~/.env << EOF
-            POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
-            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
-            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
-            EOF
-
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
 
   test_pre-prod:
     <<: *defaults
     steps:
       - checkout
-
-
-      - run:
-          command: |
-            cat >> ~/.env << EOF
-            POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
-            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
-            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
-            EOF
-
+      
+      
+      # both
+      - run: |
+          cat >> ~/src/services/config.js << EOF
+          export const airtableConfig = {
+          endpointUrl: 'https://api.airtable.com',
+          readonlyKey: '${POI_APP_READONLY_KEY}',
+          workspaceBios: '${POI_APP_WORKSPACE_BIOS}',
+          workspaceGigs: '${POI_APP_WORKSPACE_GIGS}'
+          }
+          EOF
+      
+      
+      
       - run: yarn install
 
       - run: yarn build
-
-      # run tests!
-      - run:
-          command: |
-            npm install --save-dev --save-exact ava@next
-            npm install tap-xunit --save-dev # or you could use npm
-            mkdir -p ~/reports
-            yarn test:ci --tap | npx tap-xunit > ~/reports/coverage.xml
-          when: always
-      - store_test_results:
-          path: ~/reports
-      - store_artifacts:
-          path: ~/reports
 
       - run: npm install --save-dev firebase-tools
 

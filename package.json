@@ -6,15 +6,15 @@
   "version": "0.0.2",
   "license": "MIT",
   "scripts": {
-    "dev": "poi",
-    "build": "poi build",
+    "dev": "cross-env NODE_PATH=. poi",
+    "build": "cross-env NODE_PATH=. poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
-    "test": "ava",
-    "test:ci": "npx nyc ava src",
+    "test": "tyu",
+    "test:ci": "nyc ava src",
     "deploy": "cp -a dist/. public/ ",
-    "configure": "cp src/services/config.js.example src/services/config.js",
-    "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
+    "env:copy": "cross-env POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY cp src/services/config.js.example src/services/config.js",
+    "postinstall": "npm run env:copy && npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
@@ -23,6 +23,7 @@
   "dependencies": {
     "airtable": "^0.5.7",
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
     "gsap": "^2.0.2",
     "materialize-css": "^1.0.0-rc.2",
     "normalize.css": "^7.0.0",
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
     "ava": "1.0.0-rc.2",
     "browser-env": "^3.2.5",
     "node-sass": "^4.10.0",
@@ -47,9 +49,8 @@
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.1.0",
     "sass-loader": "^7.1.0",
-    "tyu": "1.0.6",
-    "vue-devtools": "^5.0.0-beta.1",
-    "vue-test-utils": "^1.0.0-beta.11"
+    "tyu": "^1.0.6",
+    "vue-devtools": "^5.0.0-beta.1"
   },
   "ava": {
     "require": [
@@ -57,14 +58,22 @@
       "@babel/polyfill"
     ]
   },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "object-assign"
+    ]
+  },
   "env": {
     "test": {
       "plugins": [
-        [ "istanbul", {
+        [
+          "istanbul",
+          {
             "exclude": [
               "**/*.test.js"
             ]
-          }]
+          }
+        ]
       ]
     }
   }

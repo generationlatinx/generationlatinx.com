@@ -1,15 +1,19 @@
-import test from 'ava';
-import Vue from 'vue';
-import Performer from './cast-roster.vue';
-import Router from 'vue-router';
+// You need to install vue-test-utils
+import { mount } from '@vue/test-utils'
+import CastRoster from './cast-roster.vue'
+
+describe('CastRoster', () => {
+  test('is a Vue instance', () => {
+    const wrapper = mount(CastRoster)
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
+
+  test('has correct initial content', () => {
+    const wrapper = mount(CastRoster)
+
+    expect(wrapper.text()).toBe('')
+    expect(wrapper.html()).toBe('<div class="container"><div class="row"><div class="s12"><span name="list" tag="div" appear=""></span></div></div></div>')
 
 
-const Ctor = new Vue(Performer);
-
-test('renders', t => {
-	const vm = new Vue(Performer).$mount();
-	const tree = {
-		$el: vm.$el.outerHTML
-	};
-	t.snapshot(tree);
-});
+  })
+})

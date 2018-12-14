@@ -1,15 +1,16 @@
-import test from 'ava';
-import Vue from 'vue';
-import ShowsPage from './shows-page.vue';
-import Router from 'vue-router';
+// You need to install vue-test-utils
+import { mount } from '@vue/test-utils'
+import ShowsPage from './shows-page.vue'
 
+describe('ShowsPage', () => {
+  test('is a Vue instance', () => {
+    const wrapper = mount(ShowsPage)
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
 
-const Ctor = new Vue(ShowsPage);
-
-test('renders', t => {
-	const vm = new Vue(ShowsPage).$mount();
-	const tree = {
-		$el: vm.$el.outerHTML
-	};
-	t.snapshot(tree);
-});
+  test('has correct content', () => {
+    const wrapper = mount(ShowsPage)
+    expect(wrapper.text()).toBe('')
+    expect(wrapper.html()).toBe('<div><div><div class=\"progress show-on-sm pbar purple\"><div class=\"indeterminate\"></div></div></div></div>')		
+  })
+})

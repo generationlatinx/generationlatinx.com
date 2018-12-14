@@ -1,17 +1,15 @@
-import test from 'ava';
-import Vue from 'vue';
-import Navbar from './navbar.vue';
-import Router from 'vue-router';
+// You need to install vue-test-utils
+import { mount } from '@vue/test-utils'
+import NavBar from './navbar.vue'
 
-const Ctor = new Vue(Navbar);
+describe('NavBar', () => {
+  test('is a Vue instance', () => {
+    const wrapper = mount(NavBar)
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
 
-
-
-
-test('renders', t => {
-	const vm = new Vue(Navbar).$mount();
-	const tree = {
-		$el: vm.$el.outerHTML
-	};
-	t.snapshot(tree);
-});
+  test('has correct content', () => {
+    const wrapper = mount(NavBar)
+    expect(wrapper.text()).toBe('Home Videos Meet the Directors Contact Next show on Tues, 12/10 8pm')
+  })
+})
