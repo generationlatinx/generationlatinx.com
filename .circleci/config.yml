@@ -36,7 +36,7 @@ jobs:
     steps:
       - checkout
 
-      - run: cp src/services/config.js.example src/services/config.js #todo remove?
+      #- run: cp src/services/config.js.example src/services/config.js #todo remove?
 
       # Download and cache dependencies
       - restore_cache:
@@ -47,6 +47,17 @@ jobs:
       - run: yarn install
 
       - run: yarn build
+      
+      # both
+      - run: |
+          cat >> ~/src/services/config.js << EOF
+          export const airtableConfig = {
+          endpointUrl: 'https://api.airtable.com',
+          readonlyKey: '${POI_APP_READONLY_KEY}',
+          workspaceBios: '${POI_APP_WORKSPACE_BIOS}',
+          workspaceGigs: '${POI_APP_WORKSPACE_GIGS}'
+          }
+          EOF
 
       - save_cache:
           paths:
@@ -66,31 +77,14 @@ jobs:
           fingerprints:                                                                                        #
             - "71:f5:71:db:2f:95:9a:da:ff:64:e6:cd:63:d9:3e:ba"                                                #
 
-      - run:
-          name: Set Heroku config vars
-          command: |
-            cat >> ~/.env << EOF
-            POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
-            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
-            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
-            EOF
-
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
 
   test_pre-prod:
     <<: *defaults
     steps:
       - checkout
-
-
-      - run:
-          command: |
-            cat >> ~/.env << EOF
-            POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
-            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
-            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
-            EOF
-
+      
+      
       - run: yarn install
 
       - run: yarn build
