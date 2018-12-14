@@ -66,8 +66,7 @@
     "branches": 9,
     "ignore-class-method": ["VueRouter", "RouterLink"],
     "require": [
-      "./test/helpers/setup.js",
-      "src/"
+      "./test/helpers/setup.js"
     ],
     "all": true
   },
