@@ -19,7 +19,7 @@ EOF
 ## setup buildpack order manually (if necessary)
 # heroku buildpacks:set heroku/nodejs
 # heroku buildpacks:add heroku/ruby
-heroku config:set POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
+
 
 # Add heroku.com to the list of known hosts
 ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts
