@@ -36,7 +36,7 @@ jobs:
     steps:
       - checkout
 
-      - run: cp src/services/config.js.example src/services/config.js
+      - run: cp src/services/config.js.example src/services/config.js #todo remove?
 
       # Download and cache dependencies
       - restore_cache:
@@ -85,20 +85,25 @@ jobs:
           fingerprints:                                                                                        #
             - "71:f5:71:db:2f:95:9a:da:ff:64:e6:cd:63:d9:3e:ba"                                                #
 
+      - run:
+          name: Set Heroku config vars
+          command: heroku config:set POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
+
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
 
   test_pre-prod:
     <<: *defaults
     steps:
       - checkout
-      
-      
+
+
       - run:
           command: |
             cat >> ~/.env << EOF
             POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
+            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
+            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
             EOF
-      - run: echo $POI_APP_READONLY_KEY
 
       - run: yarn install
 
