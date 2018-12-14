@@ -1,17 +1,15 @@
-import test from 'ava';
-import Vue from 'vue';
-import Mailchimp from './mailchimp.vue';
-import Router from 'vue-router';
+// You need to install vue-test-utils
+import { mount } from '@vue/test-utils'
+import Mailchimp from './Mailchimp.vue'
 
-const Ctor = new Vue(Mailchimp);
+describe('Mailchimp', () => {
+  test('is a Vue instance', () => {
+    const wrapper = mount(Mailchimp)
+    expect(wrapper.isVueInstance()).toBeTruthy()
+  })
 
-
-
-
-test('renders', t => {
-	const vm = new Vue(Mailchimp).$mount();
-	const tree = {
-		$el: vm.$el.outerHTML
-	};
-	t.snapshot(tree);
-});
+  test('has correct content', () => {
+    const wrapper = mount(Mailchimp)
+    expect(wrapper.text()).toContain('Subscribe with your email address')
+  })
+})
