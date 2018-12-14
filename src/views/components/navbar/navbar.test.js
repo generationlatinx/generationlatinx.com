@@ -1,6 +1,6 @@
 // You need to install vue-test-utils
 import { mount } from '@vue/test-utils'
-import NavBar from './NavBar.vue'
+import NavBar from './navbar.vue'
 
 describe('NavBar', () => {
   test('is a Vue instance', () => {

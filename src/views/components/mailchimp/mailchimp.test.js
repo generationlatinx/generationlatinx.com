@@ -1,6 +1,6 @@
 // You need to install vue-test-utils
 import { mount } from '@vue/test-utils'
-import Mailchimp from './Mailchimp.vue'
+import Mailchimp from './mailchimp.vue'
 
 describe('Mailchimp', () => {
   test('is a Vue instance', () => {
