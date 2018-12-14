@@ -40,7 +40,9 @@
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",
     "ava": "1.0.0-rc.2",
+    "babel-plugin-istanbul": "^5.1.0",
     "browser-env": "^3.2.5",
+    "istanbul-instrumenter-loader": "^3.0.1",
     "node-sass": "^4.10.0",
     "nyc": "^13.1.0",
     "require-extension-hooks": "^0.3.3",
@@ -68,23 +70,16 @@
       "VueRouter",
       "RouterLink"
     ],
+    "include": [
+      "src/**/*.{js,vue}"
+    ],
+    "exclude": [
+      "src/*.js"
+    ],
     "require": [
       "./test/helpers/setup.js"
     ],
+    "cache": true,
     "all": true
-  },
-  "env": {
-    "test": {
-      "plugins": [
-        [
-          "istanbul",
-          {
-            "exclude": [
-              "src/**/*.test.js"
-            ]
-          }
-        ]
-      ]
-    }
   }
 }
