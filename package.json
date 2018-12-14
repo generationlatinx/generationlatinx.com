@@ -28,7 +28,7 @@
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "offline-plugin": "4.9.1",
-    "poi": "10",
+    "poi": "9.6.13",
     "poi-preset-bundle-report": "2.0.2",
     "poi-preset-offline": "9.0.3",
     "promise-polyfill": "7.1.2",
@@ -40,9 +40,7 @@
   "devDependencies": {
     "@babel/polyfill": "^7.0.0",
     "ava": "1.0.0-rc.2",
-    "babel-plugin-istanbul": "^5.1.0",
     "browser-env": "^3.2.5",
-    "istanbul-instrumenter-loader": "^3.0.1",
     "node-sass": "^4.10.0",
     "nyc": "^13.1.0",
     "require-extension-hooks": "^0.3.3",
@@ -59,28 +57,15 @@
       "@babel/polyfill"
     ]
   },
-  "nyc": {
-    "check-coverage": false,
-    "per-file": false,
-    "lines": 0,
-    "statements": 0,
-    "functions": 0,
-    "branches": 0,
-    "ignore-class-method": [
-      "VueRouter",
-      "RouterLink"
-    ],
-    "include": [
-      "src/**/*.{js,vue}"
-    ],
-    "exclude": [
-      "src/*.js",
-      "src/index.js",
-      "src/**/*.test.js"
-    ],
-    "require": [
-      "./test/helpers/setup.js"
-    ],
-    "cache": true
+  "env": {
+    "test": {
+      "plugins": [
+        [ "istanbul", {
+            "exclude": [
+              "**/*.test.js"
+            ]
+          }]
+      ]
+    }
   }
 }
