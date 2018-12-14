@@ -20,6 +20,5 @@ EOF
 # heroku buildpacks:set heroku/nodejs
 # heroku buildpacks:add heroku/ruby
 
-
 # Add heroku.com to the list of known hosts
 ssh-keyscan -H heroku.com >> ~/.ssh/known_hosts

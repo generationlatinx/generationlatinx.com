@@ -28,7 +28,7 @@
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "offline-plugin": "4.9.1",
-    "poi": "9.6.13",
+    "poi": "10",
     "poi-preset-bundle-report": "2.0.2",
     "poi-preset-offline": "9.0.3",
     "promise-polyfill": "7.1.2",
@@ -57,14 +57,17 @@
       "@babel/polyfill"
     ]
   },
-   "nyc": {
+  "nyc": {
     "check-coverage": true,
     "per-file": true,
     "lines": 9,
     "statements": 9,
     "functions": 9,
     "branches": 9,
-    "ignore-class-method": ["VueRouter", "RouterLink"],
+    "ignore-class-method": [
+      "VueRouter",
+      "RouterLink"
+    ],
     "require": [
       "./test/helpers/setup.js"
     ],
@@ -73,11 +76,14 @@
   "env": {
     "test": {
       "plugins": [
-        [ "istanbul", {
+        [
+          "istanbul",
+          {
             "exclude": [
               "src/**/*.test.js"
             ]
-          }]
+          }
+        ]
       ]
     }
   }
