@@ -57,6 +57,11 @@
       "@babel/polyfill"
     ]
   },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "object-assign"
+    ]
+  },
   "env": {
     "test": {
       "plugins": [
