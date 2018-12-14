@@ -13,8 +13,7 @@
     "test": "ava",
     "test:ci": "npx nyc ava src",
     "deploy": "cp -a dist/. public/ ",
-    "configure": "cp src/services/config.js.example src/services/config.js",
-    "postinstall": "npm run configure && npm run build && npm run deploy && echo 'Client built!'"
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
@@ -28,7 +27,7 @@
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
     "offline-plugin": "4.9.1",
-    "poi": "10",
+    "poi": "9.6.13",
     "poi-preset-bundle-report": "2.0.2",
     "poi-preset-offline": "9.0.3",
     "promise-polyfill": "7.1.2",

@@ -21,13 +21,12 @@ module.exports = {
     require('poi-preset-offline')({
       pwa: './src/pwa.js', // Path to pwa runtime entry
       pluginOptions: {} // Additional options for offline-plugin
-    }),
-    "@vue/app"
+    })
   ],
   envs: {
     __VERSION__: '0.0.0',
     POI_APP_READONLY_KEY: process.env.POI_APP_READONLY_KEY,
     POI_APP_WORKSPACE_BIOS: process.env.POI_APP_WORKSPACE_BIOS,
     POI_APP_WORKSPACE_GIGS: process.env.POI_APP_WORKSPACE_GIGS
-  }  
+  }
 }
