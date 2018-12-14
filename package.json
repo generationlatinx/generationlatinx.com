@@ -59,12 +59,12 @@
     ]
   },
   "nyc": {
-    "check-coverage": false,
-    "per-file": false,
+    "check-coverage": true,
+    "per-file": true,
     "lines": 0,
     "statements": 0,
     "functions": 0,
-    "branches": 0,
+    "branches": 9,
     "ignore-class-method": [
       "VueRouter",
       "RouterLink"
