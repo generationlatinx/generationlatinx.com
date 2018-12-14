@@ -64,9 +64,6 @@
     "statements": 9,
     "functions": 9,
     "branches": 9,
-    "exclude": [
-      "src/core/**/*.js"
-    ],
     "ignore-class-method": ["VueRouter", "RouterLink"],
     "require": [
       "./test/helpers/setup.js"
@@ -82,6 +79,7 @@
         [ "istanbul", {
             "exclude": [
               "src/**/*.test.js"
+              "src/core/"
             ]
           }]
       ]
