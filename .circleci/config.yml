@@ -91,14 +91,15 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-      
-      
+
+
       - run:
           command: |
             cat >> ~/.env << EOF
             POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
+            POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS
+            POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
             EOF
-      - run: echo $POI_APP_READONLY_KEY
 
       - run: yarn install
 
