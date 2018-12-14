@@ -66,10 +66,8 @@
     "branches": 9,
     "ignore-class-method": ["VueRouter", "RouterLink"],
     "require": [
-      "./test/helpers/setup.js"
-    ],
-    "extension": [
-      ".vue"
+      "./test/helpers/setup.js",
+      "src/"
     ],
     "all": true
   },
@@ -79,7 +77,6 @@
         [ "istanbul", {
             "exclude": [
               "src/**/*.test.js",
-              "src/core/"
             ]
           }]
       ]
