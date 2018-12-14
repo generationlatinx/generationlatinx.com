@@ -84,7 +84,7 @@ export default {
 
     if (this.performer !== null) {
       this.getPerformerDetails(this.performerId)
-      console.log(2, `We were mounted first with ${this.performerId}`)
+      // console.log(2, `We were mounted first with ${this.performerId}`)
     }
 
 
@@ -94,16 +94,16 @@ export default {
     async getPerformerDetails (params) {
       const response = await PerformerService.getPerformerDetails(params)
       let data = response.data.fields
-      console.log(3, response.data)
+      // console.log(3, response.data)
       this.fullName = data["Performer"]
-      console.log(5, this.fullName)
+      // console.log(5, this.fullName)
       this.playStatus = data["Play Status"]
       this.longBio = data["Long Bio"]
       this.shortBio = data["Short Bio"]
       this.headshot = data["Headshot Image"][0].thumbnails.large.url
       this.adminAssignment = data["Admin Assignment"][0]
 
-      console.log(4, this.playStatus, " <- PlayStatus")
+      // console.log(4, this.playStatus, " <- PlayStatus")
     }
   },
   props: {
