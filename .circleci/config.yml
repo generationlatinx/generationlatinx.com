@@ -53,25 +53,6 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
-      - run:
-          command: |
-            npm install --save-dev --save-exact ava@next
-            npm install tap-xunit --save-dev # or you could use npm
-            mkdir -p ~/reports
-            yarn test --tap| npx tap-xunit > ~/reports/ava.xml
-          when: always
-      - store_test_results:
-          path: ~/reports
-      - store_artifacts:
-          path: ~/reports
-
-
-  # test-dev:
-  #   <<: *defaults
-  #   steps:
-  #     - checkout
-  #     - run: ./node_modules/.bin/firebase deploy --token $FIREBASE_TOKEN
   test_stage:
     <<: *defaults
     steps:
@@ -113,19 +94,6 @@ jobs:
       - run: yarn install
 
       - run: yarn build
-
-      # run tests!
-      - run:
-          command: |
-            npm install --save-dev --save-exact ava@next
-            npm install tap-xunit --save-dev # or you could use npm
-            mkdir -p ~/reports
-            yarn test:ci --tap | npx tap-xunit > ~/reports/coverage.xml
-          when: always
-      - store_test_results:
-          path: ~/reports
-      - store_artifacts:
-          path: ~/reports
 
       - run: npm install --save-dev firebase-tools
 
