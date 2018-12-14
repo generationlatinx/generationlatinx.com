@@ -87,7 +87,7 @@ jobs:
 
       - run:
           name: Set Heroku config vars
-          command: heroku config:set POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS
+          command: heroku config:set POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY POI_APP_WORKSPACE_BIOS=$POI_APP_WORKSPACE_BIOS POI_APP_WORKSPACE_GIGS=$POI_APP_WORKSPACE_GIGS --app $HEROKU_APP_STAGING
 
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
 
