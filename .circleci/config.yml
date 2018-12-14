@@ -91,6 +91,10 @@ jobs:
     <<: *defaults
     steps:
       - checkout
+      - run: |
+        cat >> ~/.env << EOF
+        POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY
+        EOF
 
       - run: yarn install
 
