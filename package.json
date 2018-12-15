@@ -13,8 +13,7 @@
     "test": "tyu",
     "test:ci": "nyc ava src",
     "deploy": "cp -a dist/. public/ ",
-    "env:copy": "cross-env POI_APP_READONLY_KEY=$POI_APP_READONLY_KEY cp src/services/config.js.example src/services/config.js",
-    "postinstall": "npm run env:copy && npm run build && npm run deploy && echo 'Client built!'"
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "author": {
     "name": "Rene M. Paccha",
