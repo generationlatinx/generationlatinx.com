@@ -1,1 +1,1 @@
-export { default } from './uncanny-section.vue'
+export { default } from './hero-section.vue'

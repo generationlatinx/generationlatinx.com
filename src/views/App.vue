@@ -4,6 +4,7 @@
       <div class="main-content">
         <div id="header-nav" class="nav-bars top main-and-sidenav">
           <navbar></navbar>
+          <hero-section></hero-section>
         </div>
         <router-view/>
 
@@ -52,6 +53,7 @@
   import SidebarToggle from '@/views/components/SidebarToggle.vue'
   import ShowsPage from '@/views/pages/shows-page'
   import Navbar from '@/views/components/navbar'
+  import HeroSection from '@/views/components/hero-section'
 
   export default {
     name: 'app',
@@ -60,6 +62,7 @@
       SidebarToggle,
       ShowsPage,
       Navbar,
+      HeroSection,
     }
   }
 </script>
