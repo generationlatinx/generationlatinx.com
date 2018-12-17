@@ -23,6 +23,7 @@ describe('NavBar', () => {
       localVue,
       router
     })
+    
     expect(wrapper.text()).toBe('Home Videos Meet the Directors Contact Next show on Tues, 12/10 8pm')
   })
 })
