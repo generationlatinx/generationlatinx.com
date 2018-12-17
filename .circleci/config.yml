@@ -54,6 +54,8 @@ jobs:
     steps:
       - checkout
 
+      # - run: yarn test
+
       - run:                                                                                                   #
           name: Run setup script                                                                               #
           command: bash .circleci/setup-heroku.sh                                                              #

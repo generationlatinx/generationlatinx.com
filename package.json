@@ -10,8 +10,8 @@
     "build": "cross-env NODE_PATH=. poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
-    "test": "tyu",
-    "test:ci": "nyc ava src",
+    "test": "npx tyu -- --no-cache",
+    "test:ci": "npx tyu -- --no-cache --coverage",
     "deploy": "cp -a dist/. public/ ",
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
