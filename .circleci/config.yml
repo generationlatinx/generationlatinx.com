@@ -54,7 +54,7 @@ jobs:
     steps:
       - checkout
 
-      - run: yarn test
+      # - run: yarn test
 
       - run:                                                                                                   #
           name: Run setup script                                                                               #
