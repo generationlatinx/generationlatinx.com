@@ -85,7 +85,14 @@ export default {
     if (this.performer !== null) {
       this.getPerformerDetails(this.performerId)
       // console.log(2, `We were mounted first with ${this.performerId}`)
+    } else {
+      if (this.$route.params.id) {
+        this.getPerformerDetails(this.performerId)
+
+      }
+
     }
+
 
 
   },
