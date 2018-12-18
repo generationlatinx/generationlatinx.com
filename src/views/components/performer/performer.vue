@@ -18,18 +18,18 @@
 <div  v-else-if="playStatus" class="container ">
 
 
-  <div class="row">
+  <div id="facecard" class="row">
 
 
     <div class="col s12 m6 section-short-bio">
       <div class="card horizontal">
-        <div class="card-image">
+        <div class="card-image hide-on-small-only">
           <img :src="headshot" alt="performer headshot">
 
         </div>
         <div class="card-content ">
           <h2 class="black-text">{{fullName}}</h2>
-          <p><em>{{shortBio || adminAssignment}}</em></p>
+          <p><em>{{adminAssignment}}</em></p>
         </div>
         <!-- <div class="card-action">
           <a href="#">This is a link w meta pics</a>
@@ -50,7 +50,9 @@
           <p class="let-us-indent">{{longBio}}</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link w meta pics</a>
+
+
+          Link for <a href="#facecard">{{performer}}</a>
         </div>
       </div>
     </div>
@@ -64,6 +66,8 @@
 
 <script>
 import PerformerService from '@/services/PerformerService'
+
+
 
 export default {
   name: "performer",
@@ -81,7 +85,7 @@ export default {
   },
   mounted () {
 
-
+    // console.log(4, this.$router.currentRoute)
     if (this.performer !== null) {
       this.getPerformerDetails(this.performerId)
       // console.log(2, `We were mounted first with ${this.performerId}`)

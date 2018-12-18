@@ -11,10 +11,10 @@
       </div>
     </div>
 
-    <div class="container-wrap-hero container">
-      <div>
+    <div class="container-wrap-hero">
+      <div class="container">
         <!-- primary header attaches here -->
-        <h1 class="hero-heading hide-on-small-only"></h1>
+        <h1 class="hero-heading vertical-align"></h1>
       </div>
     </div>
   </div>
