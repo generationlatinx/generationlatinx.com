@@ -52,7 +52,7 @@
         <div class="card-action">
 
 
-          Link for <a href="#facecard">{{performer}}</a>
+          Link for <a href="#facecard">{{fullName}}</a>
         </div>
       </div>
     </div>
