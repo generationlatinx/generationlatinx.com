@@ -1,7 +1,6 @@
 <template>
-
+  <!-- PRIMARILY ON TABLET AND ABOVE -->
   <div class="hero-banner">
-
     <div>
       <div class="container-init-hero hide-on-med-and-down container">
         <img src="@/images/GLx-Logo-Expanded-White.png"
@@ -12,27 +11,16 @@
       </div>
     </div>
 
-
-    <div class="container-wrap-hero container">
-      <div>
-        <!-- header attaches here -->
-        <h1 class="hero-heading"></h1>
+    <div class="container-wrap-hero">
+      <div class="container">
+        <!-- primary header attaches here -->
+        <h1 class="hero-heading vertical-align"></h1>
       </div>
     </div>
-
   </div>
-
-
-
-
 </template>
 
 <script>
 export default {
   name: "HeroSection"
 }
-
-</script>
-
-<style lang="css">
-</style>

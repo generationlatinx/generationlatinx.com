@@ -72,7 +72,7 @@ export default {
 
       // call to the api
       this.biosApi.table('Bios').select({
-        maxRecords: 35,
+        maxRecords: 55,
         view: "Splash Only"
       }).firstPage().then((res) => {
         // provide a biosTableId now

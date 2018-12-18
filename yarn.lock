@@ -2568,11 +2568,6 @@ deep-equal@^1.0.1:
   resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
   integrity sha1-9dJgKStmDghO/0zbyfCK0yR0SLU=
 
-deep-extend@^0.4.0:
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
-  integrity sha1-SLaZwn4zS/ifEIkr5DL25MfTSn8=
-
 deep-extend@^0.6.0:
   version "0.6.0"
   resolved "https://registry.yarnpkg.com/deep-extend/-/deep-extend-0.6.0.tgz#c4fa7c95404a17a9c3e8ca7e1537312b736330ac"
@@ -2861,7 +2856,7 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
-ejs@^2.3.4, ejs@^2.5.7:
+ejs@^2.5.7:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
   integrity sha512-0xy4A/twfrRCnkhfk8ErDi5DqdAsAqeGxht4xkCUrsvhhbQNs7E+4jV0CN7+NKIY0aHE72+XvqtBIXzD31ZbXQ==
@@ -5282,7 +5277,7 @@ loader-runner@^2.3.0:
   resolved "https://registry.yarnpkg.com/loader-runner/-/loader-runner-2.3.1.tgz#026f12fe7c3115992896ac02ba022ba92971b979"
   integrity sha512-By6ZFY7ETWOc9RFaAIb23IjJVcM4dvJC/N57nmdz9RSkMXvAXGI7SyVlAw3v8vjtDRlqThgVDVmTnr9fqMlxkw==
 
-loader-utils@0.2.x, loader-utils@^0.2.16:
+loader-utils@^0.2.16:
   version "0.2.17"
   resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-0.2.17.tgz#f86e6374d43205a6e6c60e9196f17c0299bfb348"
   integrity sha1-+G5jdNQyBabmxg6RlvF8Apm/s0g=
@@ -6170,17 +6165,6 @@ obuf@^1.0.0, obuf@^1.1.1:
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
   integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
 
-offline-plugin@4.9.1:
-  version "4.9.1"
-  resolved "https://registry.yarnpkg.com/offline-plugin/-/offline-plugin-4.9.1.tgz#e97a6be3118b4dc360e06ed4bc473f10f2de73b6"
-  integrity sha1-6Xpr4xGLTcNg4G7UvEc/EPLec7Y=
-  dependencies:
-    deep-extend "^0.4.0"
-    ejs "^2.3.4"
-    loader-utils "0.2.x"
-    minimatch "^3.0.3"
-    slash "^1.0.0"
-
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -6591,11 +6575,6 @@ poi-preset-bundle-report@2.0.2:
   integrity sha512-RaCKqcUrV0APOcqGVe/Fy77o++kNnu4pfa6bwWwLPp65uKl5cOofGfY+jP/m50FSTBXmA73XTkrnzu2y+/VqpQ==
   dependencies:
     webpack-bundle-analyzer "^2.8.2"
-
-poi-preset-offline@9.0.3:
-  version "9.0.3"
-  resolved "https://registry.yarnpkg.com/poi-preset-offline/-/poi-preset-offline-9.0.3.tgz#e6858f64cb97a3ce9674a377e3fe6d20be4d7b0f"
-  integrity sha512-n/Vev4+TwdlJoZwkVZ+5V205iudwSeFj/Povz+MaQNjpS9A+eCkvfqu31W9qvWYiz78Ts18FnQV5BrIaoAVyAQ==
 
 poi-webpack-node-externals@^2.0.0:
   version "2.0.0"

@@ -1197,6 +1197,37 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
 }
 
 @media (max-width: 991px) {
+  .hero-heading {
+    position: relative;
+    /* left: 73px; */
+    top: .4rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: visible;
+    /* width: 70%; */
+    margin: 15px;
+    padding: 30px;
+    /* float: left; */
+    clear: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    /* background-color: hsla(0, 0%, 100%, .79); */
+    background-image: url('../../images/glx-text-banner.png');
+    background-position: 50% 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+
   .sidenav {
     width: 350px;
     /* right:0; */
@@ -1445,18 +1476,11 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
   .cta-heading {
     margin-bottom: 10px;
   }
-  .hero-section {
-    display: block;
-    height: 265px;
-    background-image: url('../../images/glxfull.jpg');
-    background-size: 101%;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-  }
   .hero-heading {
     display: block;
     overflow: visible;
-    padding-top: 0px;
+    padding-top: 80px;
+
     background-color: transparent;
   }
   .section-subheading.center.white {
@@ -1671,8 +1695,8 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
   }
   .hero-heading {
     position: relative;
-    left: 73px;
-    top: -4px;
+    left: 10%;
+    /* top: -4px; */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1692,7 +1716,7 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
     -webkit-align-items: flex-end;
     -ms-flex-align: end;
     align-items: flex-end;
-    background-color: hsla(0, 0%, 100%, .79);
+    /* background-color: hsla(0, 0%, 100%, .79); */
     background-image: url('../../images/glx-text-banner.png');
     background-position: 50% 50%;
     background-size: contain;
