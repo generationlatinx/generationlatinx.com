@@ -14,7 +14,8 @@
     <div class="container-wrap-hero">
       <div class="container">
         <!-- primary header attaches here -->
-        <h1 class="hero-heading vertical-align"></h1>
+
+        <a href="/"><h1 class="hero-heading vertical-align"></h1></a>
       </div>
     </div>
   </div>
