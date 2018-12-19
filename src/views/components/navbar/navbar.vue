@@ -22,7 +22,7 @@
         <!-- start right hand large-screen links -->
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><router-link to="/" class="black-text sidenav-close">Home</router-link></li>
-          <li><router-link to="/videos" class="black-text sidenav-close">Videos</router-link></li>
+          <li><a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="black-text sidenav-close">Videos</a></li>
           <li><router-link to="/assigned" class="black-text sidenav-close">Meet the Directors</router-link></li>
           <li><router-link to="/contact" class="black-text sidenav-close">Contact</router-link></li>
           <li><router-link :to="nextShow" class="black-text sidenav-close">
