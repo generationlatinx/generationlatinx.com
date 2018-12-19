@@ -6,6 +6,7 @@ import ShowsPage from '@/views/pages/shows-page'
 
 import Mailchimp from '@/views/components/mailchimp'
 import Performer from '@/views/components/performer'
+import Assigned from '@/views/components/assigned'
 
 Vue.use(VueRouter)
 
@@ -24,11 +25,11 @@ const routes = [
   //   name: 'Videos',
   //   compoennt: NextVideo
   // }
-  // {
-  //   path: '/assigned',
-  //   name: 'Meet the Directors',
-  //   component: DirectorShowcase
-  // }
+  {
+    path: '/assigned',
+    name: 'Meet the Directors',
+    component: Assigned
+  },
   {
     path: '/contact',
     name: 'Mailchimp',

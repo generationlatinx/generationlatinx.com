@@ -1,66 +1,57 @@
 <template>
   <div>
-
-
-  <div v-if="bio">
-    <!-- wrapping click/touch-function -->
-    <div  class="card hoverable">
-      <div v-if="bio.fields['Headshot Image']" class="card-image">
-        <img  :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
-        alt=""
-        width="100%" />
-        <span class="card-title"><span class="nameplate">{{bio.fields['Performer']}}</span></span>
-      </div>
-    </div>
-  </div>
-
-
-<div  v-else-if="playStatus" class="container ">
-
-
-  <div id="facecard" class="row">
-
-
-    <div class="col s12 m6 section-short-bio">
-      <div class="card horizontal">
-        <div class="card-image hide-on-small-only">
-          <img :src="headshot" alt="performer headshot">
-
-        </div>
-        <div class="card-content ">
-          <h2 class="black-text">{{fullName}}</h2>
-          <p><em>{{adminAssignment}}</em></p>
-        </div>
-        <!-- <div class="card-action">
-          <a href="#">This is a link w meta pics</a>
-        </div> -->
-      </div>
-    </div>
-
-
-
-    <div class="col s12 m6 section-long-bio">
-      <div class="card">
-        <div class="card-image">
-          <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
-          <span class="card-title job-title">{{ adminAssignment || (playStatus !== "Assigned" ? playStatus : "GLx Contributor") }}</span>
-
-        </div>
-        <div class="card-content custom-card">
-          <p class="let-us-indent">{{longBio}}</p>
-        </div>
-        <div class="card-action">
-
-
-          Link for <a href="#facecard">{{fullName}}</a>
+    <div v-if="bio">
+      <!-- wrapping click/touch-function -->
+      <div  class="card hoverable">
+        <div v-if="bio.fields['Headshot Image']" class="card-image">
+          <img  :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
+          alt=""
+          width="100%" />
+          <span class="card-title"><span class="nameplate">{{bio.fields['Performer']}}</span></span>
         </div>
       </div>
     </div>
 
+    <div  v-else-if="playStatus" class="container ">
+      <!-- FACECARD -->
+      <div id="facecard" class="row">
+        <!-- <div class="col s12 m6 section-short-bio"> -->
+          <!-- This div is 7-columns wide on pushed to the right by 5-columns.           -->
+        <div class="col l7 push-l5 m10 s12 section-short-bio">
+          <div class="card horizontal">
+            <div class="card-image hide-on-small-only">
+              <img :src="headshot" alt="performer headshot">
+            </div>
+            <div class="card-content ">
+              <h2 class="black-text">{{fullName}}</h2>
+              <!-- GIVE instead a SHORT BIO ON MOBILE USERS ON-THE-GO -->
+              <p class="hide-on-small-only"><em>{{adminAssignment}}</em></p>
+              <p class="show-on-small-only"><em>{{shortBio}}</em></p>
+            </div>
+          </div>
+        </div>
 
 
-  </div>
-</div>
+
+          <!-- BIO-TEXT CARD  -->
+          <!-- 5-columns wide pulled to the left by 7-columns.           -->
+        <!-- <div class="col s12 m6 section-long-bio">           -->
+        <div class="col l5 pull-l7 m12 s12 section-long-bio">
+          <div class="card">
+            <div class="card-image">
+              <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
+              <span class="card-title job-title">{{ adminAssignment || (playStatus !== "Assigned" ? playStatus : "GLx Contributor") }}</span>
+            </div>
+            <div class="card-content custom-card">
+              <p class="let-us-indent">{{longBio}}</p>
+            </div>
+            <div class="card-action">
+              Link for <a href="#facecard">{{fullName}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
