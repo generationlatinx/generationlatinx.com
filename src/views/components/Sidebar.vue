@@ -37,14 +37,14 @@
       <!-- two -->
       <div class="row">
         <li>
-          <router-link to="/videos" class="white-text">
+          <a <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text">
             <div class="col s2 center-align">
-              <i class="fas fa-video"></i>
+              <i class="fab fa-youtube"></i>
             </div>
             <div class="col s10">
               Videos
             </div>
-          </router-link>
+          </a>
         </li>
       </div>
 
