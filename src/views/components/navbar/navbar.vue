@@ -23,16 +23,21 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><router-link to="/" class="black-text sidenav-close">Home</router-link></li>
           <li><a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="black-text sidenav-close">Videos</a></li>
-          <li><router-link to="/assigned" class="black-text sidenav-close">Meet the Directors</router-link></li>
+          <!-- <li><router-link to="/assigned" class="black-text sidenav-close">Meet the Directors</router-link></li> -->
+          <!-- <li><router-link to="/press" class="black-text sidenav-close">Press</router-link></li>           -->
           <li><router-link to="/contact" class="black-text sidenav-close">Contact</router-link></li>
-          <li><router-link :to="nextShow" class="black-text sidenav-close">
 
+          <!-- SECONDARY PRIORITY -->
+          <li><router-link :to="nextShow" class="black-text sidenav-close">
             <div class="chip red white-text">
-              <!-- <img src="images/yuna.jpg" alt="Contact Person"> -->
-              <span class="red-text text-lighten-4">Next show on </span>{{ nextShow }}
+              <!-- <span class="red-text text-lighten-4">Next show on </span>{{ nextShow }} -->
+              <!-- dev placeholder -->
+              <span class="red-text text-lighten-4">Shows on Tuesdays at 10pm</span>
+
             </div>
           </router-link>
         </li>
+
       </ul>
     </div>
   </nav>

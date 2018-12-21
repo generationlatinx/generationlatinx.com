@@ -49,7 +49,7 @@
       </div>
 
       <!-- one line here -->
-      <div class="row">
+      <!-- <div class="row">
         <li>
           <router-link to="/assigned" class="white-text">
             <div class="col s2 center-align">
@@ -60,7 +60,22 @@
             </div>
           </router-link>
         </li>
-      </div>
+      </div> -->
+
+      <!-- PRIORITY VIRTUAL NEWS CLIPPINGS-->
+      <!-- one line here -->
+      <!-- <div class="row">
+        <li>
+          <router-link to="/press" class="white-text">
+            <div class="col s2 center-align">
+              <i class="fas fa-bullhorn"></i>
+            </div>
+            <div class="col s10">
+              Meet the Directors
+            </div>
+          </router-link>
+        </li>
+      </div> -->
 
       <!-- one line here -->
       <div class="row">
