@@ -2117,3 +2117,12 @@ input#mce-EMAIL {
 .glx-red > span {
   color: #ffffff;
 }
+
+.row.waves-effect.waves-light.btn-flat {
+    width: 100%;
+    text-align: right;
+}
+
+.tint {
+  background-color:rgba(0,0,0,.4);
+}

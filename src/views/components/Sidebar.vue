@@ -1,7 +1,6 @@
 <template>
   <!-- ADDING SWIPE HANDLER -->
   <div v-touch:swipe.right="swipeHandler" :class="$style.sidebar">  <!-- init med and small non-nav header -->
-
     <br/>
     <router-link v-touch="touchHandler" to="/" class="black-text">
       <div class="row valign-wrapper">
@@ -22,13 +21,13 @@
 
     <ul class="right-align container">
       <!-- one line here -->
-      <div class="row">
+      <div class="row waves-effect waves-light btn-flat">
         <li>
           <router-link v-touch="touchHandler" to="/" class="white-text">
             <div class="col s2 center-align">
               <i class="fas fa-home"></i>
             </div>
-            <div class="col s10">
+            <div class="col s10 ">
               Home
             </div>
           </router-link>
@@ -36,7 +35,7 @@
       </div>
 
       <!-- two -->
-      <div class="row">
+      <div class="row waves-effect waves-light btn-flat">
         <li>
           <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text" alt="videos open in a new window">
             <div class="col s2 center-align">
@@ -50,7 +49,7 @@
       </div>
 
       <!-- one line here -->
-      <!-- <div class="row">
+      <!-- <div class="row waves-effect waves-light btn-flat">
         <li>
           <router-link to="/assigned" class="white-text">
             <div class="col s2 center-align">
@@ -65,7 +64,7 @@
 
       <!-- PRIORITY VIRTUAL NEWS CLIPPINGS-->
       <!-- one line here -->
-      <!-- <div class="row">
+      <!-- <div class="row waves-effect waves-light btn-flat">
         <li>
           <router-link to="/press" class="white-text">
             <div class="col s2 center-align">
@@ -79,8 +78,8 @@
       </div> -->
 
       <!-- one line here -->
-      <div class="row">
-        <li>
+      <div class="row waves-effect waves-light btn-flat">
+        <li >
           <router-link v-touch="touchHandler" to="/contact" class="white-text">
             <div class="col s2 center-align">
               <i class="fas fa-at"></i>
@@ -97,6 +96,7 @@
       <!-- <li><router-link to="/assigned" class="white-text sidenav-close">Meet the Directors</router-link></li> -->
       <!-- <li><router-link to="/" class="white-text sidenav-close">Contact</router-link></li> -->
     </ul>
+
   </div>
 </template>
 
@@ -156,7 +156,9 @@ export default {
     width: 300px;
     height: 100vh;
     max-width: 90vw;
-    background-color: var(--accent-color);
+    /* background-color: var(--accent-color); */
+    background-color: #0D4D3F;
+
 
 
   }
