@@ -1,5 +1,6 @@
 <template>
-  <div :class="$style.sidebar">  <!-- init med and small non-nav header -->
+  <!-- ADDING SWIPE HANDLER -->
+  <div v-touch:swipe.right="swipeHandler" :class="$style.sidebar">  <!-- init med and small non-nav header -->
 
     <br/>
     <router-link to="/" class="black-text">
@@ -101,7 +102,12 @@
 
 <script>
 
+  import Vue from 'vue'
+
   import { TweenMax, Power4 } from 'gsap';
+  import Vue2TouchEvents from 'vue2-touch-events'
+
+  Vue.use(Vue2TouchEvents)
 
 
 export default {
@@ -123,6 +129,15 @@ export default {
         x: dX,
         ease: Power4.easeOut
       })
+    }
+  },
+  methods: {
+    swipeHandler(dirn) {
+      console.log(dirn)
+      this.toggleSidebar()
+    },
+    toggleSidebar() {
+      this.$store.dispatch('toggleSidebar')
     }
   }
 }
