@@ -134,8 +134,10 @@ export default {
   methods: {
     swipeHandler(dirn) {
       console.log(dirn)
+      this.toggleSidebar()
+    },
+    toggleSidebar() {
       this.$store.dispatch('toggleSidebar')
-
     }
   }
 }
