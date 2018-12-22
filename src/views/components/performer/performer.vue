@@ -93,9 +93,31 @@ export default {
   },
 
   methods: {
+    hardRightOfList(airlist) {
+
+      // return airResource.length() > 0 ?  : ''
+      let airResource = airlist
+      switch (airResource) {
+        case airResource === undefined:
+          console.log( 'empty airtable cell')
+          return ''
+          break;
+        case airResource === '':
+          console.log('something in here, here being #{airResource}')
+          // NOTE: May need to update these conditions in future?, or just have consumed by Vuex
+          return airResource.find(e => e)
+        default:
+          return ''
+      }
+    },
+
+
+
     async getPerformerDetails (params) {
       const response = await PerformerService.getPerformerDetails(params)
       let data = response.data.fields
+      let adminAssignment = this.hardRightOfList(data["Admin Assignment"])
+
       // console.log(3, response.data)
       this.fullName = data["Performer"]
       // console.log(5, this.fullName)
@@ -103,7 +125,7 @@ export default {
       this.longBio = data["Long Bio"]
       this.shortBio = data["Short Bio"]
       this.headshot = data["Headshot Image"][0].thumbnails.large.url
-      this.adminAssignment = data["Admin Assignment"][0]
+      this.adminAssignment = adminAssignment
 
       // console.log(4, this.playStatus, " <- PlayStatus")
     }

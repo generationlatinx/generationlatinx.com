@@ -6,6 +6,15 @@ module.exports = {
     'src/polyfills.js',
     'src/index.js'
   ],
+  plugins: [
+    {
+      resolve: '@poi/plugin-vue-static',
+      options: {
+        staticRoutes: ['/', '/performers']
+      }
+
+    }
+  ],
   html: {
     title: pkg.productName,
     description: pkg.description,
