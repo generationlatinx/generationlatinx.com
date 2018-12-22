@@ -104,6 +104,7 @@ export default {
           break;
         case airResource === '':
           console.log('something in here, here being #{airResource}')
+          // NOTE: May need to update these conditions in future?, or just have consumed by Vuex
           return airResource.find(e => e)
         default:
           return ''
