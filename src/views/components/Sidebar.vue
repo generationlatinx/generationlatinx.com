@@ -3,7 +3,7 @@
   <div v-touch:swipe.right="swipeHandler" :class="$style.sidebar">  <!-- init med and small non-nav header -->
 
     <br/>
-    <router-link to="/" class="black-text">
+    <router-link v-touch="touchHandler" to="/" class="black-text">
       <div class="row valign-wrapper">
         <div class="col s3 column-nav-images">
           <img src="@/images/avatar.png" alt="glx avatar logo" class="responsive-img image-logo">
@@ -24,7 +24,7 @@
       <!-- one line here -->
       <div class="row">
         <li>
-          <router-link to="/" class="white-text">
+          <router-link v-touch="touchHandler" to="/" class="white-text">
             <div class="col s2 center-align">
               <i class="fas fa-home"></i>
             </div>
@@ -38,7 +38,7 @@
       <!-- two -->
       <div class="row">
         <li>
-          <a <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text">
+          <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text">
             <div class="col s2 center-align">
               <i class="fab fa-youtube"></i>
             </div>
@@ -81,7 +81,7 @@
       <!-- one line here -->
       <div class="row">
         <li>
-          <router-link to="/contact" class="white-text">
+          <router-link v-touch="touchHandler" to="/contact" class="white-text">
             <div class="col s2 center-align">
               <i class="fas fa-at"></i>
             </div>
@@ -133,6 +133,10 @@ export default {
   },
   methods: {
     swipeHandler(dirn) {
+      console.log(dirn)
+      this.toggleSidebar()
+    },
+    touchHandler(dirn) {
       console.log(dirn)
       this.toggleSidebar()
     },
