@@ -15,10 +15,13 @@ const Foo = { template: '<div>foo</div>'}
 const routes = [
   // { path: '/performers', component: CastRoster },
   { path: '/foo', component: Foo },
+
   {
     path: '/',
     name: 'Home',
     component: ShowsPage
+    // component: () => import('@/views/components/shows-page')
+
   },
   // {
   //   path: '/videos',
