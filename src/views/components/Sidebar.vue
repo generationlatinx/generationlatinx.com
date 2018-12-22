@@ -10,7 +10,7 @@
         </div>
 
         <div class="col s9 column-nav-images ">
-          <img src="@/images/aLTERED-WHITE-glx-logo-expanded-horizontal-white.png" alt="" class="responsive-img image-header">
+          <img src="@/images/aLTERED-WHITE-glx-logo-expanded-horizontal-white.png" alt="generation latinx" class="responsive-img image-header">
         </div>
       </div>
     </router-link>
@@ -38,7 +38,7 @@
       <!-- two -->
       <div class="row">
         <li>
-          <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text">
+          <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text" alt="videos open in a new window">
             <div class="col s2 center-align">
               <i class="fab fa-youtube"></i>
             </div>

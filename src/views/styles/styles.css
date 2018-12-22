@@ -66,7 +66,9 @@ p {
   font-weight: 400;
 }
 
+
 a {
+  /* note: overridden by materialize */
   color: #2196f3;
   text-decoration: none;
 }
@@ -1196,6 +1198,13 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
   transform: scale(0.01, 0.01);
 }
 
+#mc_embed_signup_scroll > .acc-adjust-1 {
+  color:#DEDEDE;
+  /* small screen */
+  /* color: #646464; */
+}
+
+
 @media (max-width: 991px) {
   .hero-heading {
     position: relative;
@@ -1418,6 +1427,14 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
     padding-top: 36px;
     padding-bottom: 36px;
   }
+
+
+  #mc_embed_signup_scroll > .acc-adjust-1 {
+    color:#DEDEDE;
+    /* small screen */
+    /* color: #646464; */
+  }
+
 }
 
 @media (max-width: 767px) {
@@ -1629,6 +1646,13 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
     padding-right: 20px;
     padding-bottom: 0px;
     padding-left: 20px;
+  }
+
+  /* ACCESSABILITY ADDONS */
+  #mc_embed_signup_scroll > .acc-adjust-1 {
+    color:#DEDEDE;
+    /* small screen */
+    /* color: #646464; */
   }
 }
 
@@ -1972,6 +1996,17 @@ html.w-mod-js *[data-ix="scale-on-scroll"] {
     -ms-flex-align: center;
     align-items: center;
   }
+
+  /* ACCESSABILITY ADDONS */
+
+  #mc_embed_signup_scroll > .acc-adjust-1 {
+    /* color:#DEDEDE; */
+    /* small screen */
+    color: #646464;
+  }
+
+
+
 }
 
 .card .card-mailout{
@@ -2054,7 +2089,8 @@ nav {
 
 
 input#mce-EMAIL {
-    color: rgb(129, 129, 129);
+    /* color: rgb(129, 129, 129); */
+    color: #dedede;
     caret-color: rgb(129, 129, 129);
 }
 
@@ -2069,4 +2105,15 @@ input#mce-EMAIL {
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
+}
+
+.glx-red {
+  /* background-color: #E92D2D !important; */
+
+  /* actually screenreader took precedence */
+  background-color: #e82020 !important;
+}
+
+.glx-red > span {
+  color: #ffffff;
 }

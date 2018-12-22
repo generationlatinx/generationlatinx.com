@@ -4,8 +4,9 @@
       <!-- wrapping click/touch-function -->
       <div  class="card hoverable">
         <div v-if="bio.fields['Headshot Image']" class="card-image">
+          <!-- TODO: upgrade to use srcset -->
           <img  :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
-          alt=""
+          :alt="`Performer headshot for ${bio.fields['Performer']}`"
           width="100%" />
           <span class="card-title"><span class="nameplate">{{bio.fields['Performer']}}</span></span>
         </div>
