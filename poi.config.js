@@ -8,7 +8,10 @@ module.exports = {
   ],
   plugins: [
     {
-      resolve: '@poi/plugin-vue-static'
+      resolve: '@poi/plugin-vue-static',
+      options: {
+        staticRoutes: ['/', '/performers']
+      }
 
     }
   ],
