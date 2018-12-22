@@ -15,7 +15,7 @@
       <div class="container">
         <!-- primary header attaches here -->
 
-        <a href="/" alt="home page"><h1 class="hero-heading vertical-align" alt="image Generation Latinx Banner"></h1></a>
+        <a href="/" alt="homepage"><h1 class="hero-heading vertical-align" alt="image Generation Latinx Banner"></h1></a>
       </div>
     </div>
   </div>
