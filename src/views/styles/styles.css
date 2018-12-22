@@ -2104,3 +2104,14 @@ input#mce-EMAIL {
   opacity: 0;
   transform: translateY(30px);
 }
+
+.glx-red {
+  /* background-color: #E92D2D !important; */
+
+  /* actually screenreader took precedence */
+  background-color: #e82020 !important;
+}
+
+.glx-red > span {
+  color: #ffffff;
+}

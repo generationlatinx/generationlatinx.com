@@ -28,15 +28,12 @@
           <li><router-link to="/contact" class="black-text sidenav-close">Contact</router-link></li>
 
           <!-- SECONDARY PRIORITY -->
-          <li><router-link :to="nextShow" class="black-text sidenav-close">
-            <div class="chip red white-text">
-              <!-- <span class="red-text text-lighten-4">Next show on </span>{{ nextShow }} -->
-              <!-- dev placeholder -->
-              <span class="red-text text-lighten-4">Shows on Tuesdays at 10pm</span>
-
+          <!-- <li><router-link :to="nextShow" class="black-text sidenav-close">
+            <div class="glx-red chip white-text">
+              <span>Shows on Tuesdays at 10pm</span>
             </div>
           </router-link>
-        </li>
+        </li> -->
 
       </ul>
     </div>
