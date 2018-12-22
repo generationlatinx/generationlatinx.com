@@ -10,7 +10,7 @@
         </div>
 
         <div class="col s9 column-nav-images ">
-          <img src="@/images/aLTERED-WHITE-glx-logo-expanded-horizontal-white.png" alt="" class="responsive-img image-header">
+          <img src="@/images/aLTERED-WHITE-glx-logo-expanded-horizontal-white.png" alt="generation latinx" class="responsive-img image-header">
         </div>
       </div>
     </router-link>

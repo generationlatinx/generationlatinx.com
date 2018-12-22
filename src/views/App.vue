@@ -25,10 +25,10 @@
                   <div class="container-all-icons">
                     <!-- TODO: viewport resize for icons? -->
                     <div class="float-right">
-                      <a href="https://www.facebook.com/GenerationLatinX/" class="social-icon"><i class="fab fa-facebook fa-2x blue-grey-text"></i></a>
-                      <a href="https://twitter.com/GenLatinX" class="social-icon"><i class="fab fa-twitter fa-2x blue-grey-text"></i></a>
-                      <a href="https://www.instagram.com/generationlatinx/" class="social-icon"><i class="fab fa-instagram fa-2x blue-grey-text"></i></a>
-                      <a href="https://www.snapchat.com/add/GenLatinX" class="social-icon"><i class="fab fa-snapchat fa-2x blue-grey-text"></i></a>
+                      <a href="https://www.facebook.com/GenerationLatinX/" class="social-icon" alt="facebook for generation latinx"><i class="fab fa-facebook fa-2x blue-grey-text"></i></a>
+                      <a href="https://twitter.com/GenLatinX" class="social-icon" alt="twitter for generation latinx"><i class="fab fa-twitter fa-2x blue-grey-text"></i></a>
+                      <a href="https://www.instagram.com/generationlatinx/" class="social-icon" alt="instagram for generation latinx"><i class="fab fa-instagram fa-2x blue-grey-text"></i></a>
+                      <a href="https://www.snapchat.com/add/GenLatinX" class="social-icon" alt="snapchat for genration latinx"><i class="fab fa-snapchat fa-2x blue-grey-text"></i></a>
 
                       <!-- <a href="mailto:generationlatinx@gmail.com" class="social-icon"><i class="fas fa-envelope fa-2x blue-grey-text"></i></a> -->
                     </div>
