@@ -15,7 +15,7 @@
       <div class="container">
         <!-- primary header attaches here -->
 
-        <a href="/"><div class="hero-heading vertical-align"></div></a>
+        <a href="/"><h1 class="hero-heading vertical-align"></h1></a>
       </div>
     </div>
   </div>
