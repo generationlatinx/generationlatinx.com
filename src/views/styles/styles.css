@@ -2054,7 +2054,8 @@ nav {
 
 
 input#mce-EMAIL {
-    color: rgb(129, 129, 129);
+    /* color: rgb(129, 129, 129); */
+    color: #dedede;
     caret-color: rgb(129, 129, 129);
 }
 
@@ -2069,4 +2070,10 @@ input#mce-EMAIL {
 .list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
   opacity: 0;
   transform: translateY(30px);
+}
+
+#mc_embed_signup_scroll > .acc-adjust-1 {
+  /* color:#DEDEDE; */
+  /* small screen */
+  color: #646464;
 }
