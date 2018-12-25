@@ -2,7 +2,6 @@
   <div class="inner-nav-content">
     <nav id="nav" class="white hide-on-med-only hide-on-small-only brand-heading">
       <div class="nav-wrapper">
-
         <router-link to="/" class="brand-logo">
           <div class="row">
             <div class="col s3 image-logo-wrapper">
@@ -17,7 +16,6 @@
             </div>
           </div>
         </router-link>
-        <!-- end left hand icon group on large screen -->
 
         <!-- start right hand large-screen links -->
         <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -29,32 +27,55 @@
 
           <!-- SECONDARY PRIORITY -->
           <!-- <li><router-link :to="nextShow" class="black-text sidenav-close">
-            <div class="glx-red chip white-text">
-              <span>Shows on Tuesdays at 10pm</span>
-            </div>
-          </router-link>
-        </li> -->
+          <div class="glx-red chip white-text">
+          <span>Shows on Tuesdays at 10pm</span>
+        </div>
+      </router-link>
+    </li> -->
 
-      </ul>
-    </div>
-  </nav>
-  <!-- end large nav bar -->
-
-<!-- TODO: PICK up here -->
-
+      <!-- SECONDARY PRIORITY -->
+      <li>
+        <div v-for="(show, index)  in pendingShows" class="glx-red chip white-text showData">
+          <span>
+            My stored Show data:{{ show.id }} {{pendingShowsCount}}
+          </span>
+        </div>
+      </li>
+      <li>
+        <div class="chip">
+        {{getShowById(1).isComingUp}}
+      </div>
+    </li>
+  </ul>
+</div>
+</nav>
 </div>
 </template>
 
 <script>
-export default {
-  name: 'navbar',
-  data () {
-    return {
-      nextShow: 'Tues, 12/10 8pm'
+  export default {
+    name: 'navbar',
+    data () {
+      return {
+        nextShow: 'Tues, 12/10 8pm'
+      }
+    },
+    methods: {
+      getShowById(id) {
+        // this is now a method, so it can't go in computed section, nor is it cached
+        return this.$store.getters.getShowById(id)
+      }
+    },
+    computed: {
+      count() {
+        return this.$store.state.shows.count
+      },
+      pendingShows() {
+        return this.$store.getters.pendingShows
+      },
+      pendingShowsCount() {
+        return this.$store.getters.pendingShowsCount
+      }
     }
   }
-}
 </script>
-
-<style lang="css">
-</style>

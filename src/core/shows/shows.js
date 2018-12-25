@@ -4,14 +4,25 @@ const types = {
 
 // initial state
 const state = {
-  shows: []
+  count: 3,
+  shows: [
+    { id: 1, summary: '...SHOW at iO', isComingUp: true  },
+    { id: 2, summary: '...SHOW at DCT', isComingUp: false },
+    { id: 3, summary: '...SHOW at xDCT', isComingUp: true }
+  ]
 }
 
 // getters
 const getters = {
   // sidebarOpen: state => state.sidebarOpen
   // getPerformer: state => state.performer
-  getShows: state => state.shows
+  pendingShows: state => state.shows.filter(show => show.isComingUp),
+  pendingShowsCount: (state, getters) => {
+    return getters.pendingShows.length
+  },
+  getShowById: (state) => (id) => {
+    return state.shows.find(show => show.id === id)
+  }
 }
 
 // actions
@@ -39,6 +50,6 @@ const mutations = {
 export default {
   state,
   getters,
-  actions,
+  // actions,
   // mutations
 }
