@@ -1149,6 +1149,10 @@ figcaption {
   background-color: #9c2eb2;
 }
 
+html {
+  background-color: #dce3e2;
+}
+
 html.w-mod-js *[data-ix="fade-in-bottom-page-loads"] {
   opacity: 0;
   -webkit-transform: translate(0px, 50px);
