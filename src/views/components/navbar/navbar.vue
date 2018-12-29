@@ -35,15 +35,18 @@
 
       <!-- SECONDARY PRIORITY -->
       <li>
-        <div v-for="(show, index)  in pendingShows" class="glx-red chip white-text showData">
+        <div class="glx-red chip white-text showData">
+          <a href="https://www.ioimprov.com/shows/generation-latinx/">
           <span>
-            My stored Show data:{{ show.id }} {{pendingShowsCount}}
+            <!-- My stored Show data:{{ show.id }} {{pendingShowsCount}} -->
+            Tuesdays at 10pm
           </span>
+        </a>
         </div>
       </li>
       <li>
         <div class="chip">
-        {{getShowById(1).isComingUp}}
+        <!-- {{getShowById(1).isComingUp}} -->
       </div>
     </li>
   </ul>

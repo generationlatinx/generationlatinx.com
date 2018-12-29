@@ -21,7 +21,7 @@
 
     <ul class="right-align container">
       <!-- one line here -->
-      <div class="row waves-effect waves-light btn-flat">
+      <div class="row">
         <li>
           <router-link v-touch="touchHandler" to="/" class="white-text">
             <div class="col s2 center-align">
@@ -35,7 +35,7 @@
       </div>
 
       <!-- two -->
-      <div class="row waves-effect waves-light btn-flat">
+      <div class="row">
         <li>
           <a href="https://www.youtube.com/channel/UCfM0UQHLagZcqNdzxu0ea6g" class="white-text" alt="videos open in a new window">
             <div class="col s2 center-align">
@@ -78,7 +78,7 @@
       </div> -->
 
       <!-- one line here -->
-      <div class="row waves-effect waves-light btn-flat">
+      <div class="row">
         <li >
           <router-link v-touch="touchHandler" to="/contact" class="white-text">
             <div class="col s2 center-align">
@@ -156,8 +156,8 @@ export default {
     width: 300px;
     height: 100vh;
     max-width: 90vw;
-    /* background-color: var(--accent-color); */
-    background-color: #0D4D3F;
+    background-color: var(--accent-color);
+    /* background-color: #0D4D3F; */
 
 
 
