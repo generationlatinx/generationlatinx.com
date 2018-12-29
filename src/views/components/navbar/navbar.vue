@@ -44,11 +44,6 @@
         </a>
         </div>
       </li>
-      <li>
-        <div class="chip">
-        <!-- {{getShowById(1).isComingUp}} -->
-      </div>
-    </li>
   </ul>
 </div>
 </nav>
