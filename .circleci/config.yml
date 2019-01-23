@@ -38,14 +38,17 @@ jobs:
 
       # Download and cache dependencies
 
-      - run: yarn install
-      - run: yarn build
   test_stage:
     <<: *defaults
 
 
     steps:
       - checkout
+
+      - run: rm -rf node_modules
+      
+      - run: yarn install
+      - run: yarn build
 
       # - run: yarn test
 
