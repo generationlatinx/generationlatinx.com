@@ -37,23 +37,25 @@ jobs:
       - checkout
 
       # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - run: rm -rf node_modules/
 
       - run: yarn install
       - run: yarn build
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
   test_stage:
     <<: *defaults
+
+
     steps:
       - checkout
+
+      - restore_cache:
+          keys:
+            # when lock file changes, use increasingly general patterns to restore cache
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
+
+
+
 
       # - run: yarn test
 
@@ -66,11 +68,28 @@ jobs:
             - "71:f5:71:db:2f:95:9a:da:ff:64:e6:cd:63:d9:3e:ba"                                                #
 
       - run: git push -f git@heroku.com:${HEROKU_APP_STAGING}.git ${CIRCLE_BRANCH}:master
+      - save_cache:
+          paths:
+            # - node_modules
+            - ~/usr/local/lib/node_modules  # location depends on npm version
+          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+
+
 
   test_pre-prod:
     <<: *defaults
     steps:
       - checkout
+
+      - restore_cache:
+          keys:
+            # when lock file changes, use increasingly general patterns to restore cache
+            - node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
+            - node-v1-{{ .Branch }}-
+            - node-v1-
+
+
+
 
       - run: rm -rf node_modules
 
@@ -82,3 +101,9 @@ jobs:
       - run: npm install --save-dev firebase-tools
 
       - run: npx firebase deploy --token $FIREBASE_TOKEN
+
+      - save_cache:
+          paths:
+            # - node_modules
+            - ~/usr/local/lib/node_modules  # location depends on npm version
+          key: node-v1-{{ .Branch }}-{{ checksum "package-lock.json" }}
