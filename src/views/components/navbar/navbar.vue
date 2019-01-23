@@ -34,20 +34,18 @@
     </li> -->
 
       <!-- SECONDARY PRIORITY -->
-      <li>
+      <!-- <li>
         <div class="glx-red chip white-text showData">
           <a href="https://www.ioimprov.com/shows/generation-latinx/">
           <span>
-            <!-- My stored Show data:{{ show.id }} {{pendingShowsCount}} -->
             Tuesdays at 10pm
           </span>
         </a>
         </div>
-      </li>
+      </li> -->
+
+
       <li>
-        <div class="chip">
-        <!-- {{getShowById(1).isComingUp}} -->
-      </div>
     </li>
   </ul>
 </div>
