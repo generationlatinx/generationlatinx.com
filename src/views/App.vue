@@ -12,7 +12,7 @@
         <div class="section footer">
           <div class="footer accent">
             <ul class="unordered-list footer-text">
-              <li>© 2018 Generation LatinX LLC. All rights reserved.</li>
+              <li>© 2018 GENERATION LATINX LLC. All rights reserved.</li>
               <li>Directed by: <a href="https://www.imdb.com/name/nm3112631/" class="indigo-text indigo-darken-2 link-director-page">Mishell Livio</a></li>
               <li><strong>Follow us below:</strong></li>
             </ul>
