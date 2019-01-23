@@ -1,8 +1,8 @@
 {
   "private": true,
   "name": "generation-latinx-n",
-  "productName": "generation-latinx-n",
-  "description": "My exceptional Vue project",
+  "productName": "Generation LatinX",
+  "description": "Chicago Latinx Performers and Artists in Sketch and Comedy",
   "version": "0.0.2",
   "license": "MIT",
   "scripts": {
