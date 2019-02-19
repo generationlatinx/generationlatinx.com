@@ -13,12 +13,12 @@
 export default {
   name: 'sidebar-toggle',
   computed: {
-    open() {
+    open () {
       return this.$store.state.ui.sidebarOpen
     }
   },
   methods: {
-    handleClick() {
+    handleClick () {
       this.$store.dispatch('toggleSidebar')
     }
   }

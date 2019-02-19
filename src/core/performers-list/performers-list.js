@@ -23,19 +23,19 @@ const getters = {
 
 
 const actions = {
-  fetchPerformersListFailed({commit}) {
+  fetchPerformersListFailed ({commit}) {
     commit(types.FETCH_PERFORMERS_LIST_FAILED)
   },
-  fetchPerformersListFulfilled({commit}) {
+  fetchPerformersListFulfilled ({commit}) {
     commit(types.FETCH_PERFORMERS_LIST_FULFILLED)
   },
-  fetchPerformersListPending({commit}) {
+  fetchPerformersListPending ({commit}) {
     commit(types.FETCH_PERFORMERS_LIST_PENDING)
   }
 }
 
 const mutations = {
-  [types.FETCH_PERFORMERS_LIST_PENDING](state) {
+  [types.FETCH_PERFORMERS_LIST_PENDING] (state) {
     state.loading = true
   }
 }

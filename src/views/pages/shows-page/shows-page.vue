@@ -39,7 +39,7 @@ export default {
     CastRoster,
     Mailchimp
   },
-  data() {
+  data () {
     return {
       loading: false,
       error: null,
@@ -51,7 +51,7 @@ export default {
       biosPerformerId: ''
     }
   },
-  created() {
+  created () {
     this.airtable.apiKey = this.findAirtableApiKey();
     if (this.airtable.apiKey) {
       let apiKey = this.airtable.apiKey
@@ -67,7 +67,7 @@ export default {
     }
   },
   methods: {
-    getBiosTables: function() {
+    getBiosTables: function () {
       this.loading = true
       this.error = null
 
@@ -85,7 +85,7 @@ export default {
         // this.biosPerformerId = this.biosPerformerId !== '' ? this.biosPerformerId : "recrr5inRysIqgvQL" // Director hard-code, ufn
       })
     },
-    findAirtableApiKey() {
+    findAirtableApiKey () {
       let apiKey = this.airtable.readOnlyApiKey;
       return apiKey
     }

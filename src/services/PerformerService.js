@@ -1,7 +1,7 @@
 import api from '@/services/api.js'
 
 export default {
-  getPerformerDetails(params) {
+  getPerformerDetails (params) {
     return api().get('/Bios/' + params )
   }
 }

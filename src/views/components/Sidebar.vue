@@ -72,12 +72,12 @@ Vue.use(Vue2TouchEvents)
 export default {
   name: 'sidebar',
   computed: {
-    open() {
+    open () {
       return this.$store.state.ui.sidebarOpen
     }
   },
   watch: {
-    open: function(open) {
+    open: function (open) {
       const dX = open ? 0 : this.$el.offsetWidth
       TweenMax.to(this.$el, 0.6, {
         x: dX,
@@ -85,19 +85,19 @@ export default {
       })
     }
   },
-  mounted() {
+  mounted () {
     TweenMax.set(this.$el, {
       x: this.$el.offsetWidth
     })
   },
   methods: {
-    swipeHandler() {
+    swipeHandler () {
       this.toggleSidebar()
     },
-    touchHandler() {
+    touchHandler () {
       this.toggleSidebar()
     },
-    toggleSidebar() {
+    toggleSidebar () {
       this.$store.dispatch('toggleSidebar')
     }
   }
