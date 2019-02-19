@@ -3,13 +3,13 @@
     <!-- add loading bar -->
     <div v-if="loading">
       <div class="progress show-on-sm pbar purple">
-        <div class="indeterminate"/>
+        <div class="indeterminate" />
       </div>
     </div>
 
     <!-- add error notify -->
     <div v-else-if="error" class="error">
-      <a href="#" class="btn red etoast">{{error}}</a>
+      <a href="#" class="btn red etoast">{{ error }}</a>
     </div>
 
     <!-- other show app contents -->
@@ -17,11 +17,11 @@
       <!-- app modules -->
       <div class="section cast-section">
         <!-- NOTE: we might want to keep this list, and axios for pulling singular performer -->
-        <cast-roster :bios="bios"/>
+        <cast-roster :bios="bios" />
       </div>
 
       <div class="section section-subscribe">
-        <mailchimp/>
+        <mailchimp />
       </div>
     </div>
   </div>
@@ -39,20 +39,6 @@ export default {
     CastRoster,
     Mailchimp
   },
-  created() {
-    this.airtable.apiKey = this.findAirtableApiKey();
-    if (this.airtable.apiKey) {
-      let apiKey = this.airtable.apiKey
-      this.biosApi = new Airtable({ apiKey }).base(airtableConfig.workspaceBios)
-      this.showsApi = new Airtable({ apiKey }).base(airtableConfig.workspaceGigs)
-      // bios
-      if (!this.biosPerformerId) {
-        this.getBiosTables();
-      } else {
-        this.selectPerformer(this.biosPerformerId);
-      }
-    }
-  },
   data() {
     return {
       loading: false,
@@ -62,23 +48,37 @@ export default {
         readOnlyApiKey: null || airtableConfig.readonlyKey
       },
       bios: [],
-      biosPerformerId: '',
+      biosPerformerId: ''
+    }
+  },
+  created() {
+    this.airtable.apiKey = this.findAirtableApiKey();
+    if (this.airtable.apiKey) {
+      let apiKey = this.airtable.apiKey
+      this.biosApi = new Airtable({ apiKey }).base(airtableConfig.workspaceBios)
+      this.showsApi = new Airtable({ apiKey }).base(airtableConfig.workspaceGigs)
+      // bios
+      if (!this.biosPerformerId) {
+        this.getBiosTables();
+      }
+      else {
+        this.selectPerformer(this.biosPerformerId);
+      }
     }
   },
   methods: {
-    getBiosTables: function () {
+    getBiosTables: function() {
       this.loading = true
       this.error = null
 
       // call to the api
       this.biosApi.table('Bios').select({
         maxRecords: 55,
-        view: "Splash Only"
-      }).firstPage().then((res) => {
+        view: 'Splash Only'
+      }).firstPage().then(res => {
         // provide a biosTableId now
         this.bios = res
-
-      }).catch((err) => {
+      }).catch(err => {
         this.error = err.toString()
       }).finally(() => {
         this.loading = false;
@@ -88,7 +88,7 @@ export default {
     findAirtableApiKey() {
       let apiKey = this.airtable.readOnlyApiKey;
       return apiKey
-    },
+    }
   }
 }
 </script>

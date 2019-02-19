@@ -23,7 +23,7 @@ describe('Assigned', () => {
       localVue,
       router
     }).find('thead')
-    .find('th')
+      .find('th')
 
     expect(wrapper.text()).toBe('Performer')
   })

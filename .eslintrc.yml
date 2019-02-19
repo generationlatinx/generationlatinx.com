@@ -1,0 +1,333 @@
+root: true # TODO: uncomment
+
+# parser: babel-eslint
+
+env:
+  es6: true
+  node: true
+  jest: true
+
+extends: ['eslint:recommended', 'plugin:vue/recommended']
+
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+
+
+rules:
+  accessor-pairs: 0
+  # array-bracket-newline: error
+  array-bracket-spacing: 0
+  array-callback-return: 0
+  # array-element-newline: error
+  arrow-body-style: 0
+  arrow-parens: [2, "as-needed"]
+  arrow-spacing:
+    - error
+    - after: true
+      before: true
+  block-scoped-var: 0
+  block-spacing: 2
+  brace-style: [2, "stroustrup", {allowSingleLine: true}]
+  callback-return: 0
+  camelcase:
+    - error
+    - properties: "always"
+  # capitalized-comments: 'off'
+  # class-methods-use-this: error
+  comma-dangle: 2
+  comma-spacing: 2
+  comma-style: [2, "last"]
+  complexity: [0, 10]
+  computed-property-spacing:
+    - error
+    - never
+  consistent-return: 0
+  consistent-this: 0
+  curly: [2, "multi-line"]
+  default-case: 2
+  dot-location:
+    - error
+    - property
+  dot-notation:
+    - error
+    - allowKeywords: true
+  eol-last: 2
+  eqeqeq: 2
+  # func-call-spacing: error
+  # func-name-matching: error
+  func-names: 0
+  func-style:
+    - error
+    - declaration
+    - allowArrowFunctions: true
+  # function-paren-newline: error
+  generator-star-spacing: [2, {before: false, after: true}]
+  global-require: 0
+  guard-for-in: 2
+  handle-callback-err: 0
+  id-blacklist: 0
+  id-length: 0
+  id-match: 0
+  # implicit-arrow-linebreak:
+  #   - error
+  #   - beside
+  indent: [2, 2, {SwitchCase: 1, VariableDeclarator: 2}]
+  # indent-legacy: 'off'
+  init-declarations: 0
+  jsx-quotes: 1 # TODO: POSS PULL
+  key-spacing: [2, {beforeColon: false, afterColon: true}]
+  keyword-spacing: 2
+  # line-comment-position: 'off'
+  linebreak-style: 0
+  lines-around-comment: 0
+  # lines-around-directive: error
+  # lines-between-class-members: error
+  # max-classes-per-file: error
+  max-depth: 0
+  max-len: 0
+  # max-lines: error
+  # max-lines-per-function: error
+  max-nested-callbacks: 0
+  max-params: 0
+  max-statements: 0
+  max-statements-per-line: 0
+  # multiline-comment-style:
+  #   - error
+  #   - separate-lines
+  # multiline-ternary: error
+  new-cap: 2 # TODO: uncomment
+  new-parens: 2
+  newline-after-var: 0
+  newline-before-return: 0
+  newline-per-chained-call: 0
+  no-alert: 2
+  no-array-constructor: 2
+  # no-async-promise-executor: error
+  # no-await-in-loop: error
+  no-bitwise: 0
+  # no-buffer-constructor: error
+  no-caller: 2
+  no-case-declarations: 2 # TODO: uncomment
+  no-catch-shadow: 0
+  no-class-assign: 2 # TODO: uncomment
+  no-cond-assign: 2 # TODO: uncomment
+  no-confusing-arrow: 0
+  no-console: 2 # TODO: uncomment
+  no-const-assign: 2 # TODO: uncomment
+  no-constant-condition: 2 # TODO: uncomment
+  no-continue: 0
+  no-control-regex: 2 # TODO: uncomment
+  no-debugger: 2 # TODO: uncomment
+  no-delete-var: 2 # TODO: uncomment
+  no-div-regex: 0
+  no-dupe-args: 2 # TODO: uncomment
+  no-dupe-class-members: 2 # TODO: uncomment
+  no-dupe-keys: 2 # TODO: uncomment
+  no-duplicate-case: 2 # TODO: uncomment
+  no-duplicate-imports: 2
+  no-else-return: 0
+  no-empty: 2 # TODO: uncomment
+  no-empty-character-class: 2 # TODO: uncomment
+  no-empty-function: 0
+  no-empty-pattern: 2 # TODO: uncomment
+  no-eq-null: 0
+  no-eval: 2
+  no-ex-assign: 2 # TODO: uncomment
+  no-extend-native: 2
+  no-extra-bind: 2
+  no-extra-boolean-cast: 2 # TODO: uncomment
+  no-extra-label: 0
+  no-extra-parens: 0
+  no-extra-semi: 2 # TODO: uncomment
+  no-fallthrough: 2 # TODO: uncomment
+  no-floating-decimal: 2
+  no-func-assign: 2 # TODO: uncomment
+  no-implicit-coercion: 0
+  no-implicit-globals: 0
+  no-implied-eval: 2
+  no-inline-comments: 0
+  no-invalid-this: 2
+  no-irregular-whitespace: 2
+  no-iterator: 2
+  no-label-var: 2
+  no-labels: 2
+  no-lone-blocks: 0
+  no-lonely-if: 0
+  no-loop-func: 0
+  no-magic-numbers: 0
+  # no-misleading-character-class: error
+  # no-mixed-operators: error
+  no-mixed-requires: 2
+  no-mixed-spaces-and-tabs: [2, false]
+  # no-multi-assign: error
+  no-multi-spaces: 2
+  no-multi-str: 2
+  no-multiple-empty-lines: 0
+  no-native-reassign: 2
+  no-negated-condition: 0
+  no-negated-in-lhs: 2
+  no-nested-ternary: 2
+  no-new: 0
+  no-new-func: 2
+  no-new-object: 2
+  no-new-require: 2
+  no-new-symbol: 2 # TODO: uncomment
+  no-new-wrappers: 2
+  no-obj-calls: 2 # TODO: uncomment
+  no-octal: 2 # TODO: uncomment
+  no-octal-escape: 2
+  no-param-reassign: 2
+  no-path-concat: 2
+  no-plusplus: 0
+  no-process-env: 0
+  no-process-exit: 2
+  no-proto: 2
+  no-redeclare: 2 # TODO: uncomment
+  no-regex-spaces: 2 # TODO: uncomment
+  # no-prototype-builtins: error
+  no-restricted-globals: 0
+  no-restricted-imports: 0
+  no-restricted-modules: 0
+  # no-restricted-properties: error
+  no-restricted-syntax: 0
+  no-return-assign: 0
+  # no-return-await: error
+  no-script-url: 2
+  no-self-assign: 2 # TODO: uncomment
+  no-self-compare: 2
+  no-sequences: 2
+  no-shadow: 0
+  no-shadow-restricted-names: 2
+  no-spaced-func: 2
+  no-sparse-arrays: 2 # TODO: uncomment
+  no-sync: 0
+  # no-tabs: 'off'
+  # no-template-curly-in-string: error
+  no-ternary: 0
+  no-throw-literal: 0
+  no-trailing-spaces: 2
+  no-this-before-super: 2 # TODO: uncomment
+  no-undef: 2
+  no-undef-init: 2
+  no-undefined: 0
+  no-unexpected-multiline: 2 # TODO: uncomment
+  no-underscore-dangle: 0
+  no-unmodified-loop-condition: 2
+  no-unneeded-ternary: 0
+  no-unreachable: 2 # TODO: uncomment
+  no-unsafe-finally: 0
+  no-unused-expressions: 2
+  no-unused-labels: 2 # TODO: uncomment
+  no-unused-vars: [2, {vars: "all", args: "after-used"}]
+  no-use-before-define: 0
+  no-useless-call: 0
+  # no-useless-catch: error
+  no-useless-computed-key: 0
+  no-useless-concat: 2
+  no-useless-constructor: 0
+  no-useless-escape: 0 # TODO: uncomment
+  # no-useless-rename: error
+  # no-useless-return: error
+  no-var: 0
+  no-void: 0
+  no-warning-comments: 0
+  no-whitespace-before-property: 2
+  no-with: 2
+  # nonblock-statement-body-position: error
+  # object-curly-newline: error
+  object-curly-spacing: [0, "never"]
+  object-shorthand: 0
+  one-var: 0
+  one-var-declaration-per-line: 0
+  operator-assignment: 0
+  operator-linebreak: 0
+  padded-blocks: 0
+  # padding-line-between-statements: error
+  prefer-arrow-callback: 0
+  prefer-const: 0
+  # prefer-destructuring: error
+  # prefer-numeric-literals: error
+  # prefer-object-spread: error
+  # prefer-promise-reject-errors: error
+  prefer-reflect: 0
+  prefer-rest-params: 0
+  prefer-spread: 0
+  prefer-template: 0
+  quote-props: 0
+  quotes: [2, "single"]
+  radix: 0
+  # require-atomic-updates: error
+  # require-await: error
+  require-jsdoc: 0
+  require-yield: 0 # TODO: uncomment
+  # require-unicode-regexp: error
+  # rest-spread-spacing: error
+  semi: 0
+  semi-spacing: [2, {before: false, after: true}]
+  # semi-style:
+  #   - error
+  #   - last
+  sort-imports: 0 # TODO: uncomment
+  # sort-keys: 'off'
+  sort-vars: 0
+  space-before-blocks: 2
+  space-before-function-paren: [2, "always"]
+  space-in-parens: 0
+  space-infix-ops: 2
+  space-unary-ops: [2, {words: true, nonwords: false}]
+  spaced-comment:
+    - error
+    - always
+    - exceptions: ["-", "="]
+  strict: 0
+  # switch-colon-spacing: error
+  # symbol-description: error
+  template-curly-spacing: 0
+  #   - error
+  #   - never
+  # template-tag-spacing: error
+  use-isnan: 2 # TODO: uncomment
+  # unicode-bom:
+  #   - error
+  #   - never
+  valid-jsdoc: [2, {prefer: {return: "returns"}}]
+  valid-typeof: 2
+  vars-on-top: 2
+  wrap-iife: 2
+  wrap-regex: 0
+  yield-star-spacing: 0
+  yoda:
+    - error
+    - never
+
+
+
+  #====================================
+  # eslint-plugin-vue
+  #------------------------------------
+
+  vue/html-closing-bracket-newline: 0
+  # vue/comma-dangle: 2
+  # arrow-parens: 2
+  vue/order-in-components: 2
+  vue/name-property-casing:  [2, "kebab-case"]
+  vue/max-attributes-per-line: 0
+
+  vue/html-closing-bracket-spacing: 2
+  vue/attributes-order: 0
+  vue/html-self-closing: 0
+  vue/require-default-prop: 2
+  vue/require-valid-default-prop: 2
+  vue/no-multi-spaces: 2
+  vue/singleline-html-element-content-newline: ["error", {
+    "ignoreWhenNoAttributes": true,
+    "ignoreWhenEmpty": true,
+    "ignores": ["pre", "textarea", "span", "a", "label", "div"]
+  }]
+  vue/multiline-html-element-content-newline: ["error", {
+        "ignoreWhenEmpty": true,
+        "ignores": ["pre", "textarea"],
+        "allowEmptyLines": false
+    }]
+  vue/html-indent: 0

@@ -14,14 +14,14 @@ const getters = {
 
 // actions
 const actions = {
-  toggleSidebar ({ commit, state }) {
+  toggleSidebar({ commit }) {
     commit(types.TOGGLE_SIDEBAR)
   }
 }
 
 // mutations
 const mutations = {
-  [types.TOGGLE_SIDEBAR] (state) {
+  [types.TOGGLE_SIDEBAR](state) {
     state.sidebarOpen = !state.sidebarOpen
   }
 }
