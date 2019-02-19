@@ -96,7 +96,7 @@ rules:
   #   - error
   #   - separate-lines
   # multiline-ternary: error
-  new-cap: 2 # TODO: uncomment
+  # new-cap: 2 # TODO: uncomment
   new-parens: 2
   newline-after-var: 0
   newline-before-return: 0
