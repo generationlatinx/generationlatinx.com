@@ -21,14 +21,14 @@ const getters = {
 
 // actions
 const actions = {
-  fetchShows({ commit }) {
+  fetchShows ({ commit }) {
     commit(types.FETCH_SHOWS)
   }
 }
 
 // mutations
 const mutations = {
-  [types.FETCH_SHOWS](state, id) {
+  [types.FETCH_SHOWS] (state, id) {
     state.shows = id
   }
 }

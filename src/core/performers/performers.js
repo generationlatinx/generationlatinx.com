@@ -14,14 +14,14 @@ const getters = {
 
 // actions
 const actions = {
-  toggleProfile({commit}) {
+  toggleProfile ({commit}) {
     commit(types.TOGGLE_PROFILE)
   }
 }
 
 // mutations
 const mutations = {
-  [types.TOGGLE_PROFILE](state, id) {
+  [types.TOGGLE_PROFILE] (state, id) {
     state.performer = id
   }
 }

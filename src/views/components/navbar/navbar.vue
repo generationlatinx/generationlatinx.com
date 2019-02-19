@@ -46,18 +46,18 @@ export default {
     }
   },
   computed: {
-    count() {
+    count () {
       return this.$store.state.shows.count
     },
-    pendingShows() {
+    pendingShows () {
       return this.$store.getters.pendingShows
     },
-    pendingShowsCount() {
+    pendingShowsCount () {
       return this.$store.getters.pendingShowsCount
     }
   },
   methods: {
-    getShowById(id) {
+    getShowById (id) {
       // this is now a method, so it can't go in computed section, nor is it cached
       return this.$store.getters.getShowById(id)
     }

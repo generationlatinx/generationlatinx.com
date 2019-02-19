@@ -65,14 +65,11 @@ export default {
   name: 'performer',
   props: {
     bio: {
-      type: Object,
-      default: function() {
-        return Object.assign({})
-      }
+      type: Object
     }
   },
 
-  data() {
+  data () {
     return {
       performer: this.$route.params.performer || null,
       performerId: this.$route.params.id,
@@ -96,7 +93,7 @@ export default {
     }
   },
   methods: {
-    hardRightOfList(airlist) {
+    hardRightOfList (airlist) {
       let airResource = airlist
       switch (airResource) {
         case airResource === undefined:
@@ -108,7 +105,7 @@ export default {
       }
     },
 
-    async getPerformerDetails(params) {
+    async getPerformerDetails (params) {
       const response = await PerformerService.getPerformerDetails(params)
       let data = response.data.fields
       let adminAssignment = this.hardRightOfList(data['Admin Assignment'])

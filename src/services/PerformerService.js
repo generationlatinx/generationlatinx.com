@@ -1,7 +1,7 @@
-import api from '@/services/api.js'
+import Api from '@/services/Api.js'
 
 export default {
-  getPerformerDetails(params) {
-    return api().get('/Bios/' + params )
+  getPerformerDetails (params) {
+    return Api().get('/Bios/' + params )
   }
 }
