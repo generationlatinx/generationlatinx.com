@@ -1,7 +1,7 @@
-import Api from '@/services/Api.js'
+import api from '@/services/api.js'
 
 export default {
   getShows(params) {
-    return Api().get('/ReZap%20Scheduled%20Events%20A/maxRecords=10&view=Shows' + params )
+    return api().get('/ReZap%20Scheduled%20Events%20A/maxRecords=10&view=Shows' + params )
   }
 }

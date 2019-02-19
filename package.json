@@ -13,7 +13,8 @@
     "test": "npx tyu -- --no-cache",
     "test:ci": "npx tyu -- --no-cache --coverage",
     "deploy": "cp -a dist/. public/ ",
-    "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
+    "postinstall": "npm run build && npm run deploy && echo 'Client built!'",
+    "lint": "eslint 'src/**/*.{js,vue}'"
   },
   "author": {
     "name": "Rene M. Paccha",
@@ -39,9 +40,11 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
+    "@poi/plugin-karma": "^13.0.2",
     "@poi/plugin-vue-static": "^12.0.4",
     "@vue/test-utils": "^1.0.0-beta.27",
     "browser-env": "^3.2.5",
+    "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.10.0",
     "nyc": "^13.1.0",
     "require-extension-hooks": "^0.3.3",

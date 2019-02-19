@@ -10,10 +10,10 @@ const state = {
   error: null,
   airtable: {
     apiKey: null,
-    readOnlyApiKey: null  // TODO: GET THIS KEY
+    readOnlyApiKey: null
   },
   bios: [],
-  biosPerformerId: '',
+  biosPerformerId: ''
 }
 
 const getters = {
@@ -23,29 +23,26 @@ const getters = {
 
 
 const actions = {
-  fetchPerformersListFailed ({ commit, error }) {
+  fetchPerformersListFailed({commit}) {
     commit(types.FETCH_PERFORMERS_LIST_FAILED)
   },
-  fetchPerformersListFulfilled ({ commit, state }) {
+  fetchPerformersListFulfilled({commit}) {
     commit(types.FETCH_PERFORMERS_LIST_FULFILLED)
   },
-  fetchPerformersListPending ({ commit, state }) {
+  fetchPerformersListPending({commit}) {
     commit(types.FETCH_PERFORMERS_LIST_PENDING)
   }
 }
 
 const mutations = {
-  [types.FETCH_PERFORMERS_LIST_PENDING] (state, id) {
+  [types.FETCH_PERFORMERS_LIST_PENDING](state) {
     state.loading = true
   }
 }
-
-
-
 
 export default {
   state,
   getters,
   mutations,
-  actions,
+  actions
 }

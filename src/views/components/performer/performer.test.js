@@ -24,9 +24,7 @@ describe('Performer', () => {
       localVue,
       router
     })
-    // expect(wrapper.props()).toBe({"bio": undefined})
-    // TODO: fix undefined condition
-    expect(wrapper.props()).toEqual({"bio": undefined})
+    expect(wrapper.props()).toEqual({'bio': undefined})
   })
   xtest('has fallback if content is undefined', () => {
     const wrapper = mount(Performer, {

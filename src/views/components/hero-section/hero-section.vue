@@ -1,5 +1,4 @@
 <template>
-  <!-- PRIMARILY ON TABLET AND ABOVE -->
   <div class="hero-banner">
     <div>
       <div class="container-init-hero hide-on-med-and-down container">
@@ -13,8 +12,6 @@
 
     <div class="container-wrap-hero">
       <div class="container">
-        <!-- primary header attaches here -->
-
         <a href="/" alt="homepage"><h1 class="hero-heading vertical-align" alt="image Generation Latinx Banner"></h1></a>
       </div>
     </div>
@@ -23,5 +20,5 @@
 
 <script>
 export default {
-  name: "HeroSection"
+  name: 'hero-section'
 }

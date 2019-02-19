@@ -5,7 +5,7 @@ export default () => {
   return axios.create({
     baseURL: `${airtableConfig.endpointUrl}/v0/${airtableConfig.workspaceBios}`,
     withCredentials: false,
-    headers:{
+    headers: {
       'Authorization': `Bearer ${airtableConfig.readonlyKey}`,
       'Accept': 'application/json',
       'Content-Type': 'application/json'

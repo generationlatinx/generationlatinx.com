@@ -10,11 +10,11 @@ import Assigned from '@/views/components/assigned'
 
 Vue.use(VueRouter)
 
-const Foo = { template: '<div>foo</div>'}
+
 
 const routes = [
   // { path: '/performers', component: CastRoster },
-  { path: '/foo', component: Foo },
+
 
   {
     path: '/',
@@ -47,5 +47,5 @@ const routes = [
 
 export default new VueRouter({
   routes,
-  mode: "history"
+  mode: 'history'
 })
