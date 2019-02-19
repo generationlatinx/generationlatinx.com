@@ -65,10 +65,7 @@ export default {
   name: 'performer',
   props: {
     bio: {
-      type: Object,
-      default: function () {
-        return Object.assign({})
-      }
+      type: Object
     }
   },
 

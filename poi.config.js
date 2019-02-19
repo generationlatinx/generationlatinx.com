@@ -30,7 +30,6 @@ module.exports = {
     //   pwa: './src/pwa.js', // Path to pwa runtime entry
     //   pluginOptions: {} // Additional options for offline-plugin
     // })
-    require('poi-preset-eslint')({ mode: *})
   ],
   envs: {
     __VERSION__: '0.0.0',
