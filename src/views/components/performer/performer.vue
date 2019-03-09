@@ -22,58 +22,51 @@
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
             <div class="card-image hide-on-small-only valign-wrapper">
-              <img :src="headshot" alt="performer headshot">
+              <img :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
             </div>
             <!-- <div class="card-image show-on-large-only">
-              <img :src="headshot" alt="performer headshot">
-            </div> -->
+            <img :src="headshot" alt="performer headshot">
+          </div> -->
 
-            <div class="card-content ">
-              <h2 class="black-text">
-                {{ performerName }}
-              </h2>
-              <p class="hide-on-small-only">
-                <strong class="orange-text">{{ administrativeAssignment }}</strong>
-              </p>
-              <p class="show-on-small-only">
-                <em>{{ shortBio }}</em>
-              </p>
-            </div>
+          <div class="card-content ">
+            <h2 class="black-text">
+              {{ performerName }}
+            </h2>
+            <p class="hide-on-small-only">
+              <strong class="orange-text">{{ administrativeAssignment }}</strong>
+            </p>
+            <p class="show-on-small-only">
+              <em>{{ shortBio }}</em>
+            </p>
           </div>
         </div>
+      </div>
 
-        <div class="col l5 pull-l7 m12 s12 section-long-bio">
-          <div class="card">
-            <div class="card-image">
-              <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
-              <span class="card-title job-title">{{ administrativeAssignment || ( featureStatus ? featureStatus : "" ) }}</span>
-            </div>
-            <div class="card-content custom-card">
-              <p class="let-us-indent">
-                {{ longBio }}
-              </p>
-            </div>
-            <div class="card-action">
-              Link for
-              <a href="#facecard">
-                {{ performerName }}
-              </a>
-            </div>
+      <div class="col l5 pull-l7 m12 s12 section-long-bio">
+        <div class="card">
+          <div class="card-image">
+            <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
+            <span class="card-title job-title">{{ administrativeAssignment || ( featureStatus ? featureStatus : "" ) }} at GLx</span>
+          </div>
+          <div class="card-content custom-card">
+            <p class="let-us-indent">
+              {{ longBio }}
+            </p>
+          </div>
+          <div class="card-action">
+            Link for
+            <a href="#facecard">
+              {{ performerName }}
+            </a>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- HACK:YAY BREAD -->
-    <nav>
-      <div class="nav-wrapper">
-        <div class="col s12">
-          <a href="#!" class="breadcrumb blue-text">{{ performerSummary || error }}</a>
-        </div>
-      </div>
-    </nav>
-
   </div>
+  <div v-if="performerSummary || error">
+    <span class="hide">{{ performerSummary || error }}</span>
+  </div>
+</div>
 </template>
 
 <script>
@@ -84,25 +77,36 @@ export default {
   props: {
     bio: {
       type: Object
-    },
+    }
   },
-
   data () {
     return {
-      performerData: '',  // v-model is SOT
+      performerData: '',
       performerSelected: false,
       performerName: '',
-      administrativeAssignment: '',
+      administrativeAssignment: 'On-Camera Performer',
       shortBio: '',
       longBio: '',
       featureStatus: '',
 
-      headshot: 'https://via.placeholder.com/128?text=GLx+Headshot',
-      error: null,
+      // headshot defaults and more
+      hasHeadshot: false,
+      headshotPlaceholder: 'https://via.placeholder.com/128?text=GLx+Headshot',
+      srcSmall: '',
+      srcSmallWidth: '',
+      srcMedium: '',
+      srcMediumWidth: '',
+      srcLarge: '',
+      srcLargeWidth: '',
 
+      error: null
     }
   },
   computed: {
+    getImgSrcSet () {
+      let srcSet = `${this.srcMedium} ${this.srcMediumWidth}w, ${this.srcLarge} ${this.srcLargeWidth}w`
+      return this.hasHeadshot ? srcSet : this.headshotPlaceholder
+    },
     performer () {
       return this.$route.params.performer
     },
@@ -110,30 +114,42 @@ export default {
       return this.$route.params.id
     },
     performerSummary () {
+      let allowedPictureSize = 10000
+      let allowedPictureWidth = 1000
+
+
       if (this.performerData) {
-        this.performerName = this.performerData.fields["Performer"]
-        this.administrativeAssignment = this.performerData.fields["Admin Assignment"].reduce((a,v) => a + ' ' + v)
-        this.shortBio = this.performerData.fields["Short Bio"]
-        this.longBio = this.performerData.fields["Long Bio"]
-        this.featureStatus = this.performerData.fields["Feature Status"]
-        // console.log(1,this.administrativeAssignment)
+        this.performerName = this.performerData.fields.Performer
+        if ( this.performerData.fields['Admin Assignment'] ) {
+          this.administrativeAssignment = this.performerData.fields['Admin Assignment'].reduce((a, v) => a + ' ' + v)
+        }
+
+        this.shortBio = this.performerData.fields['Short Bio']
+        this.longBio = this.performerData.fields['Long Bio']
+        this.featureStatus = this.performerData.fields['Feature Status']
+
+        // use srcset in images to let computer decide resolution fit
+        if (this.performerData.fields['Headshot Image'][0].size >= allowedPictureSize) {
+          this.srcSmall = this.performerData.fields['Headshot Image'][0].thumbnails.small.url
+          this.srcSmallWidth = this.performerData.fields['Headshot Image'][0].thumbnails.small.width
+          this.srcMedium = this.performerData.fields['Headshot Image'][0].thumbnails.large.url
+          this.srcMediumWidth = this.performerData.fields['Headshot Image'][0].thumbnails.large.width
+          this.srcLarge = this.performerData.fields['Headshot Image'][0].url
+          this.srcLargeWidth = allowedPictureWidth
+          this.hasHeadshot = true
+        }
         return this.performerData
       }
 
       return ''
-    },
+    }
   },
-
-  created() {
-    // console.log(1, this.$route.params)
-    // console.log(4, this.$route.name)
-
+  created () {
     this.$router.onReady(() => {
-      if (this.$route.name !== "Home") {
+      if (this.$route.name !== 'Home') {
         this.getPerformerData()
       }
-    }
-    )
+    })
   },
   methods: {
     async getPerformerData () {

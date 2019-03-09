@@ -4,7 +4,14 @@
       <div class="s12">
         <transition-group name="list" tag="div" appear>
           <div v-for="(bio, index) in bios" :key="index + '_' + bio.id">
-            <router-link :to="{ name: 'Performer', params: { id: bio.id, performer: bio.fields.Performer } }">
+            <router-link
+            :to="{
+              name: 'Performer',
+              params: {
+                id: bio.id,
+                performer: bio.fields.Performer,
+                performerSlug: bio.fields.Performer.replace(/\W+/g, '-').toLowerCase()
+                } }">
               <div class="grid-fours">
                 <performer :bio="bio"></performer>
               </div>

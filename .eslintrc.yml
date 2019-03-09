@@ -331,3 +331,4 @@ rules:
         "allowEmptyLines": false
     }]
   vue/html-indent: 0
+  vue/no-side-effects-in-computed-properties: 1

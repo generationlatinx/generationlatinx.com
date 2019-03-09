@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import ui from './core/ui';
-import performers from './core/performers';
-import shows from './core/shows';
+// import performers from './core/performers';
+// import shows from './core/shows';
 
 Vue.use(Vuex)
 

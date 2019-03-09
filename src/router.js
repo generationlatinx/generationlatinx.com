@@ -11,7 +11,6 @@ import Assigned from '@/views/components/assigned'
 Vue.use(VueRouter)
 
 
-
 const routes = [
   // { path: '/performers', component: CastRoster },
 
@@ -39,7 +38,7 @@ const routes = [
     component: Mailchimp
   },
   {
-    path: '/performers/:id',
+    path: '/performers/:performerSlug-glx-:id',
     name: 'Performer',
     component: Performer
   }
