@@ -1,44 +1,42 @@
 <template>
   <div>
+    <!-- NOTE: this shows up on 'home' -->
 
     <div v-if="bio">
-
-
       <div class="card hoverable">
         <div v-if="bio.fields['Headshot Image']" class="card-image">
           <img
           :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
-          :alt="`${bio.fields['Performer']} headshot`"
+          :alt="performerName"
           width="100%" />
 
           <span class="card-title"><span class="nameplate">{{ bio.fields['Performer'] }}</span></span>
         </div>
       </div>
-
-
-
     </div>
+
+    <!-- end what shows up on 'home' -->
 
     <div v-else-if="performerSelected" class="container">
       <div id="facecard" class="row">
-
-
-
-
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
-            <div class="card-image hide-on-small-only">
+            <div class="card-image hide-on-small-only valign-wrapper">
               <img :src="headshot" alt="performer headshot">
             </div>
+            <!-- <div class="card-image show-on-large-only">
+              <img :src="headshot" alt="performer headshot">
+            </div> -->
+
             <div class="card-content ">
               <h2 class="black-text">
                 {{ performerName }}
               </h2>
               <p class="hide-on-small-only">
-                <!-- <em>{{ adminAssignment }}</em> -->
+                <strong class="orange-text">{{ administrativeAssignment }}</strong>
               </p>
               <p class="show-on-small-only">
-                <!-- <em>{{ shortBio }}</em> -->
+                <em>{{ shortBio }}</em>
               </p>
             </div>
           </div>
@@ -48,17 +46,17 @@
           <div class="card">
             <div class="card-image">
               <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
-              <!-- <span class="card-title job-title">{{ adminAssignment || ( featureStatus ? featureStatus : "" ) }}</span> -->
+              <span class="card-title job-title">{{ administrativeAssignment || ( featureStatus ? featureStatus : "" ) }}</span>
             </div>
             <div class="card-content custom-card">
               <p class="let-us-indent">
-                <!-- {{ longBio }} -->
+                {{ longBio }}
               </p>
             </div>
             <div class="card-action">
               Link for
               <a href="#facecard">
-                <!-- {{ fullName }} -->
+                {{ performerName }}
               </a>
             </div>
           </div>
@@ -70,7 +68,7 @@
     <nav>
       <div class="nav-wrapper">
         <div class="col s12">
-          <a href="#!" class="breadcrumb">{{ performerSummary || error }}</a>
+          <a href="#!" class="breadcrumb blue-text">{{ performerSummary || error }}</a>
         </div>
       </div>
     </nav>
@@ -94,13 +92,12 @@ export default {
       performerData: '',  // v-model is SOT
       performerSelected: false,
       performerName: '',
-      // featureStatus: '',
-      longBio: '',
+      administrativeAssignment: '',
       shortBio: '',
-      headshot: 'https://via.placeholder.com/128?text=GLx+Headshot',
-      adminAssignment: '',
-      // fullName: '',
+      longBio: '',
+      featureStatus: '',
 
+      headshot: 'https://via.placeholder.com/128?text=GLx+Headshot',
       error: null,
 
     }
@@ -115,6 +112,11 @@ export default {
     performerSummary () {
       if (this.performerData) {
         this.performerName = this.performerData.fields["Performer"]
+        this.administrativeAssignment = this.performerData.fields["Admin Assignment"].reduce((a,v) => a + ' ' + v)
+        this.shortBio = this.performerData.fields["Short Bio"]
+        this.longBio = this.performerData.fields["Long Bio"]
+        this.featureStatus = this.performerData.fields["Feature Status"]
+        // console.log(1,this.administrativeAssignment)
         return this.performerData
       }
 
@@ -123,8 +125,8 @@ export default {
   },
 
   created() {
-    console.log(1, this.$route.params)
-    console.log(4, this.$route.name)
+    // console.log(1, this.$route.params)
+    // console.log(4, this.$route.name)
 
     this.$router.onReady(() => {
       if (this.$route.name !== "Home") {
@@ -137,7 +139,6 @@ export default {
     async getPerformerData () {
       const res = await PerformerService.getPerformerById({ id: this.$route.params.id })
       this.performerData = res.data
-
       this.performerSelected = true
     }
   }
