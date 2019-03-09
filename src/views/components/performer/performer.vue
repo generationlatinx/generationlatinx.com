@@ -1,20 +1,30 @@
 <template>
   <div>
+
     <div v-if="bio">
+
+
       <div class="card hoverable">
         <div v-if="bio.fields['Headshot Image']" class="card-image">
           <img
           :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
-          :alt="`Performer headshot for ${bio.fields['Performer']}`"
+          :alt="`${bio.fields['Performer']} headshot`"
           width="100%" />
 
           <span class="card-title"><span class="nameplate">{{ bio.fields['Performer'] }}</span></span>
         </div>
       </div>
+
+
+
     </div>
 
-    <div v-else-if="playStatus" class="container">
+    <div v-else-if="performerSelected" class="container">
       <div id="facecard" class="row">
+
+
+
+
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
             <div class="card-image hide-on-small-only">
@@ -22,13 +32,13 @@
             </div>
             <div class="card-content ">
               <h2 class="black-text">
-                {{ fullName }}
+                {{ performerName }}
               </h2>
               <p class="hide-on-small-only">
-                <em>{{ adminAssignment }}</em>
+                <!-- <em>{{ adminAssignment }}</em> -->
               </p>
               <p class="show-on-small-only">
-                <em>{{ shortBio }}</em>
+                <!-- <em>{{ shortBio }}</em> -->
               </p>
             </div>
           </div>
@@ -38,23 +48,33 @@
           <div class="card">
             <div class="card-image">
               <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
-              <span class="card-title job-title">{{ adminAssignment || (playStatus !== "Assigned" ? playStatus : "GLx Contributor") }}</span>
+              <!-- <span class="card-title job-title">{{ adminAssignment || ( featureStatus ? featureStatus : "" ) }}</span> -->
             </div>
             <div class="card-content custom-card">
               <p class="let-us-indent">
-                {{ longBio }}
+                <!-- {{ longBio }} -->
               </p>
             </div>
             <div class="card-action">
               Link for
               <a href="#facecard">
-                {{ fullName }}
+                <!-- {{ fullName }} -->
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- HACK:YAY BREAD -->
+    <nav>
+      <div class="nav-wrapper">
+        <div class="col s12">
+          <a href="#!" class="breadcrumb">{{ performerSummary || error }}</a>
+        </div>
+      </div>
+    </nav>
+
   </div>
 </template>
 
@@ -66,62 +86,66 @@ export default {
   props: {
     bio: {
       type: Object
-    }
+    },
   },
 
   data () {
     return {
-      performer: this.$route.params.performer || null,
-      performerId: this.$route.params.id,
-      playStatus: '',
+      performerData: '',  // v-model is SOT
+      performerSelected: false,
+      performerName: '',
+      // featureStatus: '',
       longBio: '',
       shortBio: '',
       headshot: 'https://via.placeholder.com/128?text=GLx+Headshot',
       adminAssignment: '',
-      fullName: ''
-    }
-  },
-  mounted () {
-    if (this.performer !== null) {
-      this.getPerformerDetails(this.performerId)
+      // fullName: '',
+
+      error: null,
 
     }
-    else {
-      if (this.$route.params.id) {
-        this.getPerformerDetails(this.performerId)
+  },
+  computed: {
+    performer () {
+      return this.$route.params.performer
+    },
+    performerId () {
+      return this.$route.params.id
+    },
+    performerSummary () {
+      if (this.performerData) {
+        this.performerName = this.performerData.fields["Performer"]
+        return this.performerData
+      }
+
+      return ''
+    },
+  },
+
+  created() {
+    console.log(1, this.$route.params)
+    console.log(4, this.$route.name)
+
+    this.$router.onReady(() => {
+      if (this.$route.name !== "Home") {
+        this.getPerformerData()
       }
     }
+    )
   },
   methods: {
-    hardRightOfList (airlist) {
-      let airResource = airlist
-      switch (airResource) {
-        case airResource === undefined:
-          return ''
-        case airResource === '':
-          return airResource.find(e => e)
-        default:
-          return ''
-      }
-    },
+    async getPerformerData () {
+      const res = await PerformerService.getPerformerById({ id: this.$route.params.id })
+      this.performerData = res.data
 
-    async getPerformerDetails (params) {
-      const response = await PerformerService.getPerformerDetails(params)
-      let data = response.data.fields
-      let adminAssignment = this.hardRightOfList(data['Admin Assignment'])
-      // this.fullName = data.get('Performer') TODO: try get
-      this.fullName = data.Performer
-      this.playStatus = data['Play Status']
-      this.longBio = data['Long Bio']
-      this.shortBio = data['Short Bio']
-      this.headshot = data['Headshot Image'][0].thumbnails.large.url
-      this.adminAssignment = adminAssignment
+      this.performerSelected = true
     }
   }
 }
 </script>
 
 <style>
+
 .custom-card {
   background-color: #FCBE31;
 }

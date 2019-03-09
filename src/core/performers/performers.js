@@ -1,5 +1,5 @@
 const types = {
-  TOGGLE_PROFILE: 'TOGGLE_PROFILE'
+  FETCH_PROFILE: 'FETCH_PROFILE'
 }
 
 // initial state
@@ -9,25 +9,25 @@ const state = {
 
 // getters
 const getters = {
-  getPerformer: state => state.performer
+  getPerformerById: state => id => state.performerId
 }
 
 // actions
 const actions = {
-  toggleProfile ({commit}) {
-    commit(types.TOGGLE_PROFILE)
+  FETCHProfile ({commit}) {
+    commit(types.FETCH_PROFILE)
   }
 }
 
 // mutations
 const mutations = {
-  [types.TOGGLE_PROFILE] (state, id) {
+  [types.FETCH_PROFILE] (state, id) {
     state.performer = id
   }
 }
 export default {
   state,
   getters,
-  actions,
-  mutations
+  // actions,
+  // mutations
 }

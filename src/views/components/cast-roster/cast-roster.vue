@@ -21,6 +21,7 @@ import Performer from '@/views/components/performer'
 
 export default {
   name: 'cast-roster',
+
   components: {
     Performer
   },
