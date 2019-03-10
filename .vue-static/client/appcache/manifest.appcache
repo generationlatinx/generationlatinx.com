@@ -1,0 +1,30 @@
+CACHE MANIFEST
+#ver:12/16/2018, 11:39:01 PM
+#plugin:4.9.1
+
+CACHE:
+/assets/images/glxfull.88076627.jpg
+/assets/images/example-bg.69a53a77.png
+/assets/images/glx-text-banner.bb877ddc.png
+/assets/images/avatar.378fd761.png
+/assets/images/GLx-Logo-Expanded-White.8e5baedd.png
+/assets/images/aLTERED-WHITE-glx-logo-expanded-horizontal-white.c7c8037e.png
+/assets/images/glx_bg_y.350f7b22.jpg
+/assets/images/glx-text-banner-p-500.bf995a1f.png
+/assets/images/GLx-Logo-Expanded-White-p-500.3aa7d1eb.png
+/vendor.30439519.js
+/client.277c5789.js
+/manifest.95292176.js
+/client.eb744f55.css
+/vendor.be115a47.css
+/manifest.json
+/icons/android-chrome-192x192.png
+/favicon.ico
+/icons/android-chrome-512x512.png
+/
+
+NETWORK:
+*
+
+FALLBACK:
+/ /
