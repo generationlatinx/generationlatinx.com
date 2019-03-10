@@ -1,16 +1,18 @@
 <template>
   <div class="hero-banner">
-    <nav>
-<div class="nav-wrapper container nav-breadcrumb">
- <div class="col s12">
-   <router-link :to="{ name: 'Home'}" exact>
-               GLx Home
-             </router-link>
-   <a href="#!" class="breadcrumb">Second</a>
-   <a href="#!" class="breadcrumb">Third</a>
- </div>
-</div>
-</nav>
+    <!-- NOTE: start breadcrumb links -->
+    <nav class="transparent z-depth-0">
+      <div class="nav-wrapper container nav-breadcrumb">
+        <div class="col s12">
+          <router-link :to="{ name: 'Home'}" exact>
+            GLx Home
+          </router-link>
+          <a href="#!" class="breadcrumb">Second</a>
+          <a href="#!" class="breadcrumb">Third</a>
+        </div>
+      </div>
+    </nav>
+    <!-- end breadcrumbs -->
 
     <div>
       <div class="container-init-hero hide-on-med-and-down container">
