@@ -1,5 +1,17 @@
 <template>
   <div class="hero-banner">
+    <nav>
+<div class="nav-wrapper container nav-breadcrumb">
+ <div class="col s12">
+   <router-link :to="{ name: 'Home'}" exact>
+               GLx Home
+             </router-link>
+   <a href="#!" class="breadcrumb">Second</a>
+   <a href="#!" class="breadcrumb">Third</a>
+ </div>
+</div>
+</nav>
+
     <div>
       <div class="container-init-hero hide-on-med-and-down container">
         <img src="@/images/GLx-Logo-Expanded-White.png"
@@ -9,6 +21,8 @@
         class="responsive-img image-white-banner hide-on-med-only hide-on-med-and-down hide-on-small-only">
       </div>
     </div>
+
+
 
     <div class="container-wrap-hero">
       <div class="container">
