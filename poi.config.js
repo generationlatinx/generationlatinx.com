@@ -10,14 +10,14 @@ module.exports = {
   ],
   plugins: [
     {
-      resolve: '@poi/plugin-vue-static',
-      options: {
-        staticRoutes: [
-          '/'
-          // '/performers/nelson-rosa-glx-recFJaAN9iiWzzJXQ'
-        ],
-        resourceHints: true
-      }
+      resolve: '@poi/plugin-vue-static'
+      // options: {
+      //   staticRoutes: [
+      //     '/'
+      //     // '/performers/nelson-rosa-glx-recFJaAN9iiWzzJXQ'
+      //   ],
+      //   // resourceHints: true
+      // }
     },
     // require('poi-preset-bundle-report')(),
     // require('poi-preset-offline')({
