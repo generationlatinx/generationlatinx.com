@@ -4,7 +4,6 @@
       <div class="s12">
         <transition-group name="list" tag="div" appear>
           <div v-for="(bio, index) in bios" :key="index + '_' + bio.id">
-
             <router-link
             class="link"
             :to="{
@@ -18,7 +17,6 @@
                 <performer :bio="bio"></performer>
               </div>
             </router-link>
-
           </div>
         </transition-group>
       </div>
