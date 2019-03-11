@@ -46,7 +46,7 @@
         <div class="card">
           <div class="card-image">
             <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
-            <span class="card-title job-title">{{ administrativeAssignment || ( featureStatus ? featureStatus : "" ) }} at GLx</span>
+            <span class="card-title job-title">{{ ensembleStatus || administrativeAssignment }} at GLx</span>
           </div>
           <div class="card-content custom-card">
             <p class="let-us-indent">
@@ -84,10 +84,10 @@ export default {
       performerData: '',
       performerSelected: false,
       performerName: '',
-      administrativeAssignment: 'On-Camera Performer',
+      administrativeAssignment: 'Ensemble Member',
       shortBio: '',
       longBio: '',
-      featureStatus: '',
+      ensembleStatus: '',
 
       // headshot defaults and more
       hasHeadshot: false,
@@ -126,7 +126,7 @@ export default {
 
         this.shortBio = this.performerData.fields['Short Bio']
         this.longBio = this.performerData.fields['Long Bio']
-        this.featureStatus = this.performerData.fields['Feature Status']
+        this.ensembleStatus = this.performerData.fields['Ensemble Status']
 
         // use srcset in images to let computer decide resolution fit
         if (this.performerData.fields['Headshot Image'][0].size >= allowedPictureSize) {

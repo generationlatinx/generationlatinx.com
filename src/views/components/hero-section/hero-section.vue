@@ -1,7 +1,7 @@
 <template>
   <div class="hero-banner">
     <!-- NOTE: start breadcrumb links -->
-    <nav class="transparent z-depth-0">
+    <!-- <nav class="transparent z-depth-0">
       <div class="nav-wrapper container nav-breadcrumb">
         <div class="col s12">
           <router-link :to="{ name: 'Home'}" exact>
@@ -11,7 +11,7 @@
           <a href="#!" class="breadcrumb">Third</a>
         </div>
       </div>
-    </nav>
+    </nav> -->
     <!-- end breadcrumbs -->
 
     <div>
