@@ -1,0 +1,16 @@
+{
+  "name": "tmp",
+  "private": true,
+  "scripts": {
+    "build": "poi --prod",
+    "dev": "poi --serve"
+  },
+  "devDependencies": {
+    "poi": "^12.4.2",
+    "@poi/plugin-pwa": "^12.0.2",
+    "register-service-worker": "^1.5.2"
+  },
+  "installConfig": {
+    "pnp": true
+  }
+}

@@ -1,17 +1,23 @@
 <template>
   <div class="hero-banner">
     <!-- NOTE: start breadcrumb links -->
-    <!-- <nav class="transparent z-depth-0">
+    <nav class="transparent z-depth-0">
       <div class="nav-wrapper container nav-breadcrumb">
         <div class="col s12">
           <router-link :to="{ name: 'Home'}" exact>
             GLx Home
           </router-link>
-          <a href="#!" class="breadcrumb">Second</a>
-          <a href="#!" class="breadcrumb">Third</a>
+
+          <a v-if="this.$route.params.performer" :href="this.$route.fullPath" class="breadcrumb">{{this.$route.params.performer}}</a>
+
+
+
+
+
+          <a v-if="this.$route.name === 'Mailchimp'":href="this.$route.fullPath" class="breadcrumb">Contact for {{ this.$route.name }}</a>
         </div>
       </div>
-    </nav> -->
+    </nav>
     <!-- end breadcrumbs -->
 
     <div>
