@@ -4,21 +4,23 @@ const pkg = require('./package')
 
 module.exports = {
   entry: [
-    // 'src/polyfills.js',
-    // 'src/index.js'
+    'src/registerServiceWorker',
     'src/index'
   ],
   plugins: [
     {
-      resolve: '@poi/plugin-vue-static'
-      // options: {
-      //   staticRoutes: [
-      //     '/'
-      //     // '/performers/nelson-rosa-glx-recFJaAN9iiWzzJXQ'
-      //   ],
-      //   // resourceHints: true
-      // }
+      resolve: '@poi/plugin-vue-static',
+      options: {
+        staticRoutes: [
+          '/',
+          '/performers/nelson-rosa-glx-recFJaAN9iiWzzJXQ'
+        ]
+      }
     },
+    {
+      resolve: '@poi/plugin-pwa'
+    }
+
     // require('poi-preset-bundle-report')(),
     // require('poi-preset-offline')({
     //   pwa: './src/pwa.js', // Path to pwa runtime entry
