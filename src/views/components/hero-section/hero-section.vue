@@ -8,13 +8,9 @@
             GLx Home
           </router-link>
 
-          <a v-if="this.$route.params.performer" :href="this.$route.fullPath" class="breadcrumb">{{this.$route.params.performer}}</a>
+          <a v-if="this.$route.params.performer" :href="this.$route.fullPath" class="breadcrumb">{{ this.$route.params.performer }}</a>
 
-
-
-
-
-          <a v-if="this.$route.name === 'Mailchimp'":href="this.$route.fullPath" class="breadcrumb">Contact for {{ this.$route.name }}</a>
+          <a v-if="this.$route.name === 'Mailchimp'" :href="this.$route.fullPath" class="breadcrumb">Contact for {{ this.$route.name }}</a>
         </div>
       </div>
     </nav>
