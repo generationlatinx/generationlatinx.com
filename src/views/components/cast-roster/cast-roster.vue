@@ -14,7 +14,9 @@
                 performerSlug: bio.fields.Performer.replace(/\W+/g, '-').toLowerCase()
                 } }">
               <div class="grid-fours">
+                <transition appear :duration="1000">
                 <performer :bio="bio"></performer>
+                </transition>
               </div>
             </router-link>
           </div>
