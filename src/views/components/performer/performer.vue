@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <!-- NOTE: this shows up on 'home' -->
 
@@ -7,7 +8,7 @@
         <div v-if="bio.fields['Headshot Image']" class="card-image">
           <img
           :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
-          :alt="performerName"
+          :alt="`${ bio.fields['Performer']} performer headshot`"
           width="100%" />
 
           <span class="card-title"><span class="nameplate">{{ bio.fields['Performer'] }}</span></span>
@@ -18,55 +19,75 @@
     <!-- end what shows up on 'home' -->
 
     <div v-else-if="performerSelected" class="container">
+
+
       <div id="facecard" class="row">
+
+        <div class="col s12">
+          <br />
+
+          <div class="card">
+            <div class="card-image hide-on-med-and-up valign-wrapper">
+                <img v-if="show" :src="srcLarge" :srcSet="getImgSrcSet" :alt="`${performerName} performer headshot`">
+
+            </div>
+
+          </div>
+
+        </div>
+
+
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
             <div class="card-image hide-on-small-only valign-wrapper">
-              <img :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
+              <img :src="srcLarge" :srcSet="getImgSrcSet" :alt="`${performerName} performer headshot`">
             </div>
-            <!-- <div class="card-image show-on-large-only">
-            <img :src="headshot" alt="performer headshot">
-          </div> -->
 
-          <div class="card-content ">
-            <h2 class="black-text">
-              {{ performerName }}
-            </h2>
-            <p class="hide-on-small-only">
-              <strong class="orange-text">{{ administrativeAssignment }}</strong>
-            </p>
-            <p class="show-on-small-only">
-              <em>{{ shortBio }}</em>
-            </p>
+            <div class="card-content ">
+              <h2 class="black-text">
+                {{ performerName }}
+              </h2>
+              <p class="hide-on-small-only">
+                <strong class="orange-text">{{ administrativeAssignment }}</strong>
+              </p>
+
+              <p class="show-on-small-only">
+
+                <em>{{ shortBio }}</em>
+
+              </p>
+
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col l5 pull-l7 m12 s12 section-long-bio">
-        <div class="card">
-          <div class="card-image">
-            <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
-            <span class="card-title job-title">{{ ensembleStatus || administrativeAssignment }} at GLx</span>
-          </div>
-          <div class="card-content custom-card">
-            <p class="let-us-indent">
-              {{ longBio }}
-            </p>
-          </div>
-          <div class="card-action">
-            Link for
-            <a href="#facecard">
-              {{ performerName }}
-            </a>
+        <div class="col l5 pull-l7 m12 s12 section-long-bio">
+          <div class="card">
+            <div class="card-image">
+              <img src="@/images/glx_bg_y.jpg" alt="background design in yellow">
+              <span class="card-title job-title">{{ ensembleStatus || administrativeAssignment }} at GLx</span>
+            </div>
+            <div class="card-content custom-card">
+              <p class="let-us-indent">
+                {{ longBio }}
+              </p>
+            </div>
+            <div class="card-action">
+              Link for
+              <a href="#facecard">
+                {{ performerName }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div v-if="performerSummary || error">
+      <span class="hide">{{ performerSummary || error }}</span>
+    </div>
+
   </div>
-  <div v-if="performerSummary || error">
-    <span class="hide">{{ performerSummary || error }}</span>
-  </div>
-</div>
+
 </template>
 
 <script>
@@ -81,6 +102,8 @@ export default {
   },
   data () {
     return {
+      show: true,
+
       performerData: '',
       performerSelected: false,
       performerName: '',
@@ -182,5 +205,6 @@ em
 {
   font-family: 'Roboto Condensed', 'Helvetica Neue', Helvetica, sans-serif
 }
+
 
 </style>
