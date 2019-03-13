@@ -1,8 +1,6 @@
 <template>
-
   <div>
     <!-- NOTE: this shows up on 'home' -->
-
     <div v-if="bio">
       <div class="card hoverable">
         <div v-if="bio.fields['Headshot Image']" class="card-image">
@@ -15,27 +13,19 @@
         </div>
       </div>
     </div>
-
     <!-- end what shows up on 'home' -->
 
     <div v-else-if="performerSelected" class="container">
-
-
       <div id="facecard" class="row">
-
         <div class="col s12">
           <br />
 
           <div class="card">
             <div class="card-image hide-on-med-and-up valign-wrapper">
-                <img v-if="show" :src="srcLarge" :srcSet="getImgSrcSet" :alt="`${performerName} performer headshot`">
-
+              <img v-if="show" :src="srcLarge" :srcSet="getImgSrcSet" :alt="`${performerName} performer headshot`">
             </div>
-
           </div>
-
         </div>
-
 
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
@@ -52,11 +42,8 @@
               </p>
 
               <p class="show-on-small-only">
-
                 <em>{{ shortBio }}</em>
-
               </p>
-
             </div>
           </div>
         </div>
@@ -85,9 +72,7 @@
     <div v-if="performerSummary || error">
       <span class="hide">{{ performerSummary || error }}</span>
     </div>
-
   </div>
-
 </template>
 
 <script>
