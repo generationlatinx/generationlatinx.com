@@ -43,7 +43,7 @@ export default {
 
     },
     enter: function (el, done) {
-      var delay = el.dataset.index * 250
+      var delay = el.dataset.index * 125
       setTimeout(function () {
         Velocity(
           el,
@@ -53,7 +53,7 @@ export default {
       }, delay)
     },
     leave: function (el, done) {
-      var delay = el.dataset.index * 250
+      var delay = el.dataset.index * 150
       setTimeout(function () {
         Velocity(
           el,
