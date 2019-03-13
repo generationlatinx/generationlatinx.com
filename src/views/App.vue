@@ -48,16 +48,16 @@ import HeroSection from '@/views/components/hero-section'
 
 export default {
   name: 'app',
-  data() {
-    return {
-      updatedYear: '2019'
-    }
-  },
   components: {
     Sidebar,
     SidebarToggle,
     Navbar,
     HeroSection
+  },
+  data () {
+    return {
+      updatedYear: '2019'
+    }
   }
 }
 </script>

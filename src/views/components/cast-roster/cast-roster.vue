@@ -5,13 +5,12 @@
         <transition-group
         name="staggered-fade"
         tag="div"
-        v-bind:css="false"
-        v-on:before-enter="beforeEnter"
-        v-on:enter="enter"
-        v-on:leave="leave"
-        appear
-        >
-        <div v-for="(bio, index) in bios" :key="index + '_' + bio.id" v-bind:data-index="index">
+        @css="false"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @leave="leave"
+        appear>
+        <div v-for="(bio, index) in bios" :data-index="index" :key="index + '_' + bio.id">
           <router-link
           :to="{
 
@@ -34,9 +33,21 @@
 
 <script>
 import Performer from '@/views/components/performer'
+import Velocity from 'velocity-animate'
 
 export default {
   name: 'cast-roster',
+  components: {
+    Performer
+  },
+  props: {
+    bios: {
+      type: Array,
+      default: function () {
+        return []
+      }
+    }
+  },
   methods: {
     beforeEnter: function (el) {
       el.style.opacity = 0
@@ -61,17 +72,6 @@ export default {
           { complete: done }
         )
       }, delay)
-    }
-  },
-  components: {
-    Performer
-  },
-  props: {
-    bios: {
-      type: Array,
-      default: function () {
-        return []
-      }
     }
   }
 }

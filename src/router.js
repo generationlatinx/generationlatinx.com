@@ -22,7 +22,7 @@ const routes = [
     component: ShowsPage
   },
   {
-    path: "*",
+    path: '*',
     name: 'page-not-found',
     component: PageNotFound
   },
