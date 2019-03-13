@@ -79,7 +79,11 @@ export default {
   height: 100vh;
   width: 100vw;
   background-color: var(--primary-color);
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
+
 }
+
 </style>
 
 <style src='@/views/styles/styles.css'></style>

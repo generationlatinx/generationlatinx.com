@@ -21,6 +21,8 @@
       <div id="facecard" class="row">
         <div class="col s12">
           <br />
+
+
           <div class="card">
             <div class="card-image hide-on-med-and-up valign-wrapper">
               <img :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
@@ -33,9 +35,6 @@
             <div class="card-image hide-on-small-only valign-wrapper">
               <img :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
             </div>
-            <!-- <div class="card-image show-on-large-only">
-            <img :src="headshot" alt="performer headshot">
-          </div> -->
 
           <div class="card-content ">
             <h2 class="black-text">
