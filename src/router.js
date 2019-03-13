@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router'
 
+import PageNotFound from '@/views/components/page-not-found'
 import ShowsPage from '@/views/pages/shows-page'
 // import NextVideo from '@/views/components/videos'
 
@@ -19,8 +20,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: ShowsPage
-    // component: () => import('@/views/components/shows-page')
-
+  },
+  {
+    path: "*",
+    name: 'page-not-found',
+    component: PageNotFound
   },
   // {
   //   path: '/videos',
