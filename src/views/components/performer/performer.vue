@@ -19,6 +19,15 @@
 
     <div v-else-if="performerSelected" class="container">
       <div id="facecard" class="row">
+        <div class="col s12">
+          <br />
+          <div class="card">
+            <div class="card-image hide-on-med-and-up valign-wrapper">
+              <img :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
+            </div>
+          </div>
+        </div>
+
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
             <div class="card-image hide-on-small-only valign-wrapper">
