@@ -49,7 +49,6 @@
     "eslint": "^5.14.1",
     "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.11.0",
-    "nyc": "^13.1.0",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^1.1.0",
