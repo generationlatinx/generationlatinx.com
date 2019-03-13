@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- add loading bar -->
-    <div v-if="loading">
+    <div v-if="loading" class="loading-container container">
       <div class="progress show-on-sm pbar purple">
-        <div class="indeterminate" />
+        <div class="indeterminate teal accent-3" />
       </div>
     </div>
 
