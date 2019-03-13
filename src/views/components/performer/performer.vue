@@ -8,7 +8,7 @@
         <div v-if="bio.fields['Headshot Image']" class="card-image">
           <img
           :src="bio.fields['Headshot Image'][0]['thumbnails'].large.url || `https://via.placeholder.com/128?text=GLx+Headshot`"
-          :alt="performerName"
+          :alt="`${ bio.fields['Performer']} performer headshot`"
           width="100%" />
 
           <span class="card-title"><span class="nameplate">{{ bio.fields['Performer'] }}</span></span>
@@ -28,7 +28,7 @@
 
           <div class="card">
             <div class="card-image hide-on-med-and-up valign-wrapper">
-                <img v-if="show" :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
+                <img v-if="show" :src="srcLarge" :srcSet="getImgSrcSet" :alt="`${performerName} performer headshot`">
 
             </div>
 
@@ -40,7 +40,7 @@
         <div class="col l7 push-l5 m10 s12 section-short-bio">
           <div class="card horizontal">
             <div class="card-image hide-on-small-only valign-wrapper">
-              <img :src="srcLarge" :srcSet="getImgSrcSet" alt="performer x headshot">
+              <img :src="srcLarge" :srcSet="getImgSrcSet" :alt="`${performerName} performer headshot`">
             </div>
 
             <div class="card-content ">
